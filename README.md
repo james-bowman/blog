@@ -1,4 +1,2 @@
 # blog
 Personal blog
-
-Source
