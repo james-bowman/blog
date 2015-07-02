@@ -12,4 +12,5 @@ deploy:
         token: $GIT_TOKEN
         domain: www.jamesbowman.me
         basedir: public
+        repo: james-bowman/james-bowman.github.io
 
