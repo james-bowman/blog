@@ -1,0 +1,8 @@
+box: debian
+build:
+  steps:
+    - arjen/hugo-build:
+        version: "0.14"
+        theme: herring-cove
+        config: config.toml
+        flags: --disableSitemap=true
