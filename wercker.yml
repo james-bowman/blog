@@ -4,6 +4,7 @@ build:
     - arjen/hugo-build:
         version: "0.14"
         theme: herring-cove
+        config: config.toml
         flags: --buildDrafts=true
 deploy:
   steps:
