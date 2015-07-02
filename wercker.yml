@@ -6,3 +6,9 @@ build:
         theme: herring-cove
         config: config.toml
         flags: --disableSitemap=true
+deploy:
+  steps:
+    - lukevivier/gh-pages:
+        token: $GIT_TOKEN
+        domain: www.jamesbowman.me
+        basedir: public
