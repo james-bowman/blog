@@ -10,6 +10,6 @@ deploy:
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
         domain: www.jamesbowman.me
-#        basedir: public
+        basedir: public
         repo: james-bowman/james-bowman.github.io
 
