@@ -1,3 +1,7 @@
 baseurl = "http://www.jamesbowman.me/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "James Bowman"
+
+[params]
+  author = "James Bowman"
+  githubuser = "james-bowman"
