@@ -1,7 +1,16 @@
 baseurl = "http://www.jamesbowman.me/"
 languageCode = "en-us"
 title = "James Bowman"
+copyright = "James Bowman"
 
 [params]
   author = "James Bowman"
-  githubuser = "james-bowman"
+  authorname = "James Bowman"
+  twitter = "https://twitter.com/jamesebowman"
+  github = "https://github.com/james-bowman"
+  linkedin = "https://uk.linkedin.com/in/jamesedwardbowman"
+  disqus = "jamesebowman"
+  [links]
+     Home = "/"
+	 "Blog" = "/blog/"
+	 "About" = "/about/"
