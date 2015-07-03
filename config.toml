@@ -2,6 +2,7 @@ baseurl = "http://www.jamesbowman.me/"
 languageCode = "en-us"
 title = "James Bowman"
 copyright = "James Bowman"
+disqusShortname = "jamesebowman"
 
 [params]
   author = "James Bowman"
@@ -10,7 +11,4 @@ copyright = "James Bowman"
   github = "https://github.com/james-bowman"
   linkedin = "https://uk.linkedin.com/in/jamesedwardbowman"
   disqus = "jamesebowman"
-  [links]
-     Home = "/"
-	 "Blog" = "/blog/"
-	 "About" = "/about/"
+  
