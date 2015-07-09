@@ -13,7 +13,7 @@ This is the start of my new blog.  It is something I have been meaning to do for
 
 <!--more-->
 
-Whilst I was doing some [Go] development and reviewing available libraries I stumbled across [Hugo].  Hugo is a static generator like [Jekyll] where content (usually written in a format like [markdown](https://en.wikipedia.org/wiki/Markdown)) is rendered offline as static HTML and then published to a hosting platform.  A benefit of this approach over using a platform like [Wordpress] is that the generated HTML can be hosted anywhere.  Hugo interested me in particular because it is written in [Go], which I am familiar with, and is reported to be extremely fast (important when waiting for content updates to render).  The steps I originally followed to setup my blog were primarily inspired by [the tutorial on the Hugo site](http://gohugo.io/tutorials/automated-deployments/). 
+I recently stumbled across [Hugo].  Hugo is a static generator like [Jekyll] where content (usually written in a format like [markdown](https://en.wikipedia.org/wiki/Markdown)) is rendered offline as static HTML and then published to a hosting platform.  A benefit of this approach over using a platform like [Wordpress] is that the generated HTML can be hosted anywhere.  Hugo interested me in particular because it is written in [Go], which I am familiar with, and is reported to be extremely fast (important when waiting for content updates to render).  The steps I originally followed to setup my blog were primarily inspired by [the tutorial on the Hugo site](http://gohugo.io/tutorials/automated-deployments/). 
 
 ## GitHub and GitHub Pages
 
