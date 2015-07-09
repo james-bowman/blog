@@ -130,7 +130,7 @@ Be careful to replace any text within <> with your actual values e.g. <Github us
 	git commit -m "Add wercker.yml"
 	git push origin master
 
-You may have noticed that our wercker.yml file contained a variable: $GIT_TOKEN.  This variable allows us to specify our GitHub access credentials for deploying to GitHub Pages outside of the pipeline and therefore keep them secret.  We will now set the value for this variable but first need to generate a GitHub access token.  Instructions for doing this can be found [here](https://help.github.com/articles/creating-an-access-token-for-command-line-use/).
+You may have noticed that our wercker.yml file contained a variable: `$GIT_TOKEN`.  This variable allows us to specify our GitHub access credentials for deploying to GitHub Pages outside of the pipeline and therefore keep them secret.  We will now set the value for this variable but first need to generate a GitHub access token.  Instructions for doing this can be found [here](https://help.github.com/articles/creating-an-access-token-for-command-line-use/).
 
 To set the value for the `$GIT_TOKEN` variable, select the `settings` tab within wercker.  Now select `pipeline` and `Add new variable`.  Enter `$GIT_TOKEN` as the `Environment Variable` and paste your generated GitHub token into the `value` field.  Check the `protected` check box so that the token is kept hidden and not displayed.  Finally click the `save` button to complete the setup.  
 
