@@ -4,12 +4,29 @@ title = "James Bowman"
 copyright = "James Bowman"
 disqusShortname = "jamesebowman"
 
+[author]
+  name = "James Bowman"
+  email = "james.edward.bowman@gmail.com"
+
 [params]
   author = "James Bowman"
   authorname = "James Bowman"
   twitter = "jamesebowman"
+  twitter_user = "jamesebowman"
   github = "https://github.com/james-bowman"
+  github_user = "james-bowman"
   linkedin = "https://uk.linkedin.com/in/jamesedwardbowman"
+  linkedin_user = "jamesedwardbowman"
   disqus = "jamesebowman"
   google_analytics = "UA-64894312-1"
+
+  facebook_like = true
+  twitter_tweet_button = true
+  google_plus_one = "true"
   
+  disqus_short_name = "jamesebowman"
+  disqus_show_comment_count = "true"
+
+  banner = true
+  twitter_tweet_count = 5
+  twitter_show_replies = true
