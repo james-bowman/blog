@@ -105,7 +105,7 @@ Now we can setup our pipeline by creating a new application.  Select `Create` an
 
 Now we need to create a `wercker.yml` file in the root of the content workspace (/blog folder).  This file should contain the following:
 
-``` toml
+``` yaml
 box: wercker/default
 build:
   	steps:
