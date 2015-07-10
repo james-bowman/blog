@@ -95,7 +95,7 @@ We have now created content, rendered it as HTML and published it to a live webs
 
 ## Automating the process with Wercker
 
-Wercker is a cloud based CI/CD service that has a growing community developing reusable build and deployment pipelines.  It has existing Hugo and GitHub Pages integration built by the Werker community making it ideal for my needs.
+Wercker is a hosted Continuous Integration/Continuous Delivery service that has a growing community developing reusable build and deployment pipelines.  It has existing Hugo and GitHub Pages integration built by the Werker community making it ideal for my needs.
 
 Wercker is free to sign up for an account and you can sign up with your GitHub account (in fact I had to do this in order to grant my wercker account with the appropriate access/permission to my GitHub repositories).
 
