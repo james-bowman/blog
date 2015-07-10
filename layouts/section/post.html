@@ -1,0 +1,53 @@
+{{ partial "header.html" . }}
+
+<div id="layout" class="pure-g">
+    {{ partial "sidebar.html" . }}
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+			
+						
+			<div itemscope itemtype="http://schema.org/Blog">
+			{{ $prevYear := "" }}
+			{{ $pages := .Data.Pages }}
+			{{ range $index, $page := .Data.Pages }}
+			{{ if eq .Type "post" }}
+
+			{{ if eq $index 0 }}
+			<section class="archives"><h1 class="year">{{ dateFormat "2006" .Date }}</h1>
+			{{ else }}
+			{{ $prev := (sub $index 1) }}
+			{{ $prevYear := (index $pages $prev).Date | dateFormat "2006" }}
+			{{ $curYear := (dateFormat "2006" .Date) }}
+
+			{{ if ne $prevYear $curYear }}
+				</section>
+				<section class="archives"><h1 class="year">{{ dateFormat "2006" .Date }}</h1>
+			{{ end }}
+		{{ end }}
+
+		<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+			<div class="meta">
+				<span class="date"><time datetime='{{ dateFormat "2006" .Date }}' itemprop="datePublished">{{ dateFormat "Jan 2" .Date }}</time></span>
+			</div>
+			<h3 class="title" itemprop="name"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+		</article>
+
+		{{ end }}
+	{{ end }}
+	</section>
+</div>
+			
+			
+               
+            </div>
+            {{ partial "pagination.html" . }}
+            {{ partial "footer.html" . }}
+        </div>
+    </div>
+</div>
+{{ partial "analytics.html" . }}
+</body>
+</html>
