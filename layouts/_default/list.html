@@ -7,37 +7,41 @@
         <div>
             <!-- A wrapper for all the blog posts -->
             <div class="posts">
-                {{ range .Paginator.Pages }}
-                <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
-                <section class="post">
-                    <header class="post-header">
+			
+						
+			<div itemscope itemtype="http://schema.org/Blog">
+			{{ $prevYear := "" }}
+			{{ $pages := .Data.Pages }}
+			{{ range $index, $page := .Data.Pages }}
+			{{ if eq .Type "post" }}
 
-                        <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+			{{ if eq $index 0 }}
+			<section class="archives"><h1 class="year">{{ dateFormat "2006" .Date }}</h1>
+			{{ else }}
+			{{ $prev := (sub $index 1) }}
+			{{ $prevYear := (index $pages $prev).Date | dateFormat "2006" }}
+			{{ $curYear := (dateFormat "2006" .Date) }}
 
-                        <p class="post-meta">
-                            {{ with .Params.author }}
-                                By <strong class="post-author">{{ . }}</strong>
-                            {{ end }}
-                            {{ if isset .Params "categories" }}
-                                under 
-                                {{ $baseUrl := .Site.BaseURL }}
-                                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
-                            {{ end }}
-                        </p>
-                    </header>
+			{{ if ne $prevYear $curYear }}
+				</section>
+				<section class="archives"><h1 class="year">{{ dateFormat "2006" .Date }}</h1>
+			{{ end }}
+		{{ end }}
 
-                    <!--<div class="post-description">-->
-					<div class="summary">
-                        {{ .Summary }}
-                    </div>
-					{{ if .Truncated }}
-  					<div class="read-more-link">
-					<p>
-  						<a href="{{ .RelPermalink }}">Read More…</a>
-  					</div>
-  					{{ end }}
-                </section>
-                {{ end }}
+		<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+			<div class="meta">
+				<span class="date"><time datetime='{{ dateFormat "2006" .Date }}' itemprop="datePublished">{{ dateFormat "Jan 2" .Date }}</time></span>
+			</div>
+			<h3 class="title" itemprop="name"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+		</article>
+
+		{{ end }}
+	{{ end }}
+	</section>
+</div>
+			
+			
+               
             </div>
             {{ partial "pagination.html" . }}
             {{ partial "footer.html" . }}
