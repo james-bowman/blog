@@ -112,10 +112,10 @@ Now we need to create a `wercker.yml` file in the root of the content workspace 
 box: wercker/default
 build:
     steps:
-       - arjen/hugo-build:
-       version: 0.14
-       theme: <theme folder name>
-       config: config.toml
+        - arjen/hugo-build:
+        version: 0.14
+        theme: <theme folder name>
+        config: config.toml
 deploy:
     steps:
         - lukevivier/gh-pages@0.2.1:
