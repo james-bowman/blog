@@ -22,7 +22,7 @@ Although I am using GitHub to store both my source content and generated HTML, I
 1. `blog` - to store the source content.  The name of this repository is not important but for the remainder of this post, I will refer to it as 'blog'.
 1. `<GitHub username>.github.io` - to host the generated static HTML.  The name of this repository must exactly match the pattern shown (this is where Github Pages serves the site from).
 
-I use Git on a regular basis to version code I write and so already have a command line client installed on my local machine.  The steps I describe in the rest of this post assume the use of a command line client but a graphical client could be used to carry out the same operations if preferred.  Either command line or graphical client can be downloaded from the following URL:
+I use Git on a regular basis to version code I write and am used to using the command line client.  Whilst the steps I describe in the rest of this post assume the use of a command line client, a graphical client could be used to carry out the same operations if preferred.  Either command line or graphical client can be downloaded from the following URL:
 
 https://git-scm.com/downloads
 
