@@ -1,7 +1,7 @@
 +++
 date = "2015-07-06T19:13:19+01:00"
 draft = false
-title = "blogging cd pipeline"
+title = "Blogging CD Pipeline"
 tags = [ "blog", "cd", "git", "github", "wercker", "hugo", "go", "golang" ]
 categories = [
   "DevOps",
