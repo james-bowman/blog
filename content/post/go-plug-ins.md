@@ -159,7 +159,7 @@ func init() {
 }
 
 func myFunction(param int) string {
-	// plug-in definition
+	// plug-in functionality
 }
 ```
 
