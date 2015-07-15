@@ -2,7 +2,7 @@
 categories = [ "Development" ]
 date = "2015-07-14T07:47:59+01:00"
 draft = false
-tags = [ "development", "go", "go-lang", "java", "plugins" ]
+tags = [ "development", "go", "go-lang", "java", "plugins", "RPC", "scripting" ]
 title = "Go plug-ins"
 
 +++
