@@ -67,7 +67,7 @@ Cons:
 
 ### 3. Compiled-in extensions
 
-This is the approach that the Go language uses internally to allow extensions e.g. [image formats](http://blog.golang.org/go-image-package#TOC_5.) and [database drivers](http://golang.org/pkg/database/sql/).  Essentially, the source code for the plug-in is compiled in to the existing application but the nature of Go means that third parties can develop their own plug-ins and compile the existing application themselves, including their plug-in without needing to modify the code for the existing application.  This was the approach I ended up adopting for Talbot and will discuss it in more depth in next sections.
+This is the approach that the Go language uses internally to support extensions e.g. [image formats](http://blog.golang.org/go-image-package#TOC_5.) and [database drivers](http://golang.org/pkg/database/sql/).  Essentially, third parties develop their own plug-ins and compile the existing application themselves along with the source for their plug-in without needing to modify the code for the existing application.  This was the approach I ended up adopting for Talbot and will discuss it in more depth in next sections.
 
 Pros:
 
