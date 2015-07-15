@@ -17,8 +17,8 @@ In other languages, plugins are well supported and relatively easy to implement.
 
 ``` java
 
-    Class clazz = Class.forName(fullyQualifiedClassName);				
-    Object product = clazz.newInstance();
+Class clazz = Class.forName(fullyQualifiedClassName);				
+Object product = clazz.newInstance();
 
 ```
 
