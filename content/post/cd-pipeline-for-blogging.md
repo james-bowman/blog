@@ -6,6 +6,7 @@ tags = [ "blog", "cd", "git", "github", "wercker", "hugo", "go", "golang" ]
 categories = [
   "DevOps",
 ]
+aliases = ["/post/blogging-cd-pipeline/"]
 
 +++
 
