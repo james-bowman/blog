@@ -4,6 +4,7 @@ date = "2015-07-14T07:47:59+01:00"
 draft = false
 tags = [ "development", "go", "go-lang", "java", "plugins", "RPC", "scripting" ]
 title = "Extending Go programs with plug-ins"
+description = "A look at some of the options for extending and customising Go Lang programs with plug-ins"
 
 +++
 
