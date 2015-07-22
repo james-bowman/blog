@@ -1,7 +1,8 @@
 +++
 date = "2015-07-06T19:13:19+01:00"
 draft = false
-title = "Continuous delivery pipeline for blogging"
+title = "Continuous delivery pipeline for blogging with Hugo and Wercker"
+description = "Setting up a continuous delivery pipeline for a blog site with Hugo, Wercker and GitHub Pages"
 tags = [ "blog", "cd", "git", "github", "wercker", "hugo", "go", "golang" ]
 categories = [
   "DevOps",
