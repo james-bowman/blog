@@ -79,9 +79,9 @@ The specified theme folder name must exactly match the local folder name of the 
 
 ### Publishing to GitHub Pages
 
-Publishing to GitHub Pages is as simple as copying the /public directory (containing the generated website) and pushing the contents to the remote `<github username>.github.io` repository.  GitHub Pages will then serve the HTML from that repository at the following URL: `http://<GitHub username>.github.io/`
+Publishing to GitHub Pages is as simple as copying the /public directory (containing the generated website) and pushing the contents to the remote `<github username>.github.io` repository.  GitHub Pages will then serve the HTML from that repository at the following URL: `http://<GitHub username>.github.io/`.  As an alternative to copying the contents of the /public directory, one could simply create the /public directory as a symbolic link/shortcut to the local copy of the `<github username>.github.io` repository.
 
-Here is the sequence of commands required to push to GitHub Pages:
+Here is the sequence of commands required to copy the /public directory and push to GitHub Pages:
 
 	mkdir ../output
 	cd ../output
