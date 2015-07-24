@@ -9,6 +9,7 @@ disqusShortname = "jamesebowman"
   email = "james.edward.bowman@gmail.com"
 
 [params]
+  description = "Software development, DevOps and coaching"
   author = "James Bowman"
   authorname = "James Bowman"
   twitter = "jamesebowman"
