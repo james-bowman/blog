@@ -17,7 +17,7 @@ I recently stumbled across [Hugo].  Hugo is a static generator like [Jekyll] whe
 
 ## GitHub and GitHub Pages
 
-I decided to use [GitHub Pages](https://pages.github.com/) to host the site since they offer a free personal site for each GitHub account and I intended to use [GitHub](http://github.com) for the source content anyway so using the same service for both made sense.
+I decided to use [GitHub Pages] to host the site since they offer a free personal site for each GitHub account and I intended to use [GitHub](http://github.com) for the source content anyway so using the same service for both made sense.
 
 Although I am using GitHub to store both my source content and generated HTML, I wanted to keep them separate and so set up 2 new, empty repositories on GitHub:
 
@@ -38,7 +38,7 @@ So that Git does not try to version control the generated HTML as part of this r
 
 ## Hugo
 
-Hugo is an open source static site generator developed in Go.  It is designed to be executed from the command line and it can be downloaded and installed locally.  It can be downloaded [here](https://github.com/spf13/hugo/releases).
+[Hugo] is an open source static site generator developed in [Go].  It is designed to be executed from the command line and it can be downloaded and installed locally.  It can be downloaded [here](https://github.com/spf13/hugo/releases).
 
 Once installed, it can be executed on the command line to setup an initial workspace for all source site content.  The command should be executed from within the `blog` directory created when we cloned the Github repository above. 
 
@@ -79,7 +79,7 @@ The specified theme folder name must exactly match the local folder name of the 
 
 ### Publishing to GitHub Pages
 
-Publishing to GitHub Pages is as simple as copying the /public directory (containing the generated website) and pushing the contents to the remote `<github username>.github.io` repository.  GitHub Pages will then serve the HTML from that repository at the following URL: `http://<GitHub username>.github.io/`.  As an alternative to copying the contents of the /public directory, one could simply create the /public directory as a symbolic link/shortcut to the local copy of the `<github username>.github.io` repository.
+Publishing to [GitHub Pages] is as simple as copying the /public directory (containing the generated website) and pushing the contents to the remote `<github username>.github.io` repository.  GitHub Pages will then serve the HTML from that repository at the following URL: `http://<GitHub username>.github.io/`.  As an alternative to copying the contents of the /public directory, one could simply create the /public directory as a symbolic link/shortcut to the local copy of the `<github username>.github.io` repository.
 
 Here is the sequence of commands required to copy the /public directory and push to GitHub Pages:
 
@@ -100,7 +100,7 @@ We have now [created content]({{< ref "#creating-content" >}}), [rendered it as 
 
 ## Automating the process with Wercker
 
-Wercker is a hosted Continuous Integration/Continuous Delivery service that has a growing community developing reusable build and deployment pipelines.  It has existing Hugo and GitHub Pages integrations built by the Werker community making it ideal for my needs.
+[Wercker] is a hosted [Continuous Integration](http://www.thoughtworks.com/continuous-integration)/[Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) service that has a growing community developing reusable build and deployment pipelines.  It has existing Hugo and GitHub Pages integrations built by the Werker community making it ideal for my needs.
 
 Wercker is free to sign up for an account and you can sign up with your GitHub account (in fact I had to do this in order to grant my wercker account with the appropriate access/permission to my GitHub repositories).
 
@@ -144,3 +144,5 @@ Now everytime, you commit and push source content changes to the `blog` reposito
 [Jekyll]: http://jekyllrb.com/
 [Hugo]: http://gohugo.io
 [Go]: https://golang.org/
+[GitHub Pages]: https://pages.github.com/
+[Wercker]: http://wercker.com/
