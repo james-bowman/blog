@@ -2,7 +2,7 @@
 categories = ["Coaching", "Development"]
 date = "2015-07-27T06:39:34+01:00"
 description = "Different leadership and coaching styles for different teams and situations"
-draft = true
+draft = false
 tags = ["coaching", "leadership", "development", "influencing"]
 title = "Leadership styles"
 
@@ -16,41 +16,14 @@ The idea of maturity as an evolutionary progression is not uncommon and is centr
 
 ## Directive and non-directive styles
 
-Leadership and teaching styles can be broadly categorised into two types: directive and non-directive.  With directive styles, the leader is typically the person who defines the solution and then tells the team or individual what to do.  With non-directive styles, the leader helps the team or individual arrive at the solution themselves usually by asking guiding questions.  Directive and non-directive styles are often referred to as "Push" and "Pull" respectively to reflect the nature of the influence.  
+Leadership and teaching styles can be broadly categorised into two types: directive and non-directive.  With directive styles, the leader is typically the person who defines the solution and then tells the team or individual what to do.  With non-directive styles, the leader helps the team or individual arrive at the solution themselves usually by asking guiding questions.  Directive and non-directive styles are often referred to as "Push" and "Pull" respectively to reflect the nature of the influence and where the solution is coming from.  The diagram below is based upon one by [Myles Downey](http://mylesdowney.com/) and shows a spectrum of coaching skills and whether they are typically associated with push or pull styles.  
 
 <a href="/post/Coaching Spectrum.001.jpg">
 	<img src="/post/Coaching Spectrum.001.jpg" alt="A spectrum of coaching skills supporting Push (directive) to pull (non-directive) influencing styles" class="pure-img">
 </a>
-_based upon [Myles Downey's Spectrum of Coaching Skills][1]._
+<sup><sub>image: based upon [Myles Downey's Spectrum of Coaching Skills][1]</sub></sup>
 
-
-
-Pros and cons of each approach
-
-motivation
-ownership/sustainability
-speed
-maturity of coachee/team
-overcomming resistence/influence
-Dunning Krueger?
-
-
-
-### Push influencing
-
-### Pull influencing
-
-#### That is the question
-
-asking questions
-socratic questions
-probably a subject for a future blog post.
-
-Double loop learning
-
-meta cognition and reflective practice
-
-
+This diagram shows that a leader can use different techniques to adapt their style depending upon the team or individual being led.  In addition, push and pull techniques work well in different situations and can yield different outcomes.  For example, push techniques can be effective in achieving compliance and yielding fast results wheras Pull/non-directive techniques tend to take much longer but can achieve commitment and behavioural change.  Pull techniques also tend to be very effective in persuasion and overcoming resistence.
 
 
 [1]: https://books.google.co.uk/books/about/Effective_Coaching.html?id=zifwAAAAMAAJ
