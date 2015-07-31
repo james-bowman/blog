@@ -1,5 +1,5 @@
 +++
-categories = ["Coaching", "Development"]
+categories = ["Coaching"]
 date = "2015-07-27T06:39:34+01:00"
 description = "Different leadership and coaching styles for different teams and situations"
 draft = false
