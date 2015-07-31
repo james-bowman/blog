@@ -127,7 +127,7 @@ deploy:
         repo: <Github username>/<Github username>.github.io
 ```
 
-Be careful to replace any text within <> with your actual values e.g. <Github username> should be replaced with your specific Github username.  Once finished, commit and push the wercker.yml file to Github:
+Be careful to replace any text within <> with your actual values e.g. `<Github username>` should be replaced with your specific Github username.  Once finished, commit and push the wercker.yml file to Github:
 
 	git add wercker.yml
 	git commit -m "Add wercker.yml"

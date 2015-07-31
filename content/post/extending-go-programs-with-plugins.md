@@ -17,7 +17,7 @@ I am really enjoying developing in [Go] but very occasionally come across things
 
 In other languages, plugins are well supported and relatively easy to implement.  In Java for example, concrete implementations of an interface can be dynamically loaded and instantiated by reflection as shown in the snippet below.  Different implementations can be 'plugged' in simply by specifying the fully qualified name of the implementing class during reflection and ensuring it is defined on the CLASSPATH.  
 
-``` java
+```java
 
 Class clazz = Class.forName(fullyQualifiedClassName);				
 Object product = clazz.newInstance();
@@ -32,9 +32,9 @@ The Go compiler statically links libraries at compilation time which results in 
 
 Given the language's constraints around dynamic linking, supporting extensibility through plugins is something a lot of people have attempted in Go and a number of alternative approaches exist including but not limited to:
 
-1. Out of process RPC calls
-1. Embedded scripting
-1. Compiled-in extensions.
+1. [Out of process RPC calls]({{< ref "#1-out-of-process-rpc-calls" >}})
+1. [Embedded scripting]({{< ref "#2-embedded-scripting" >}})
+1. [Compiled-in extensions]({{< ref "#3-compiled-in-extensions" >}})
 
 Each of these approaches have their own strengths and weaknesses which I will discuss over the next few sections.  
 
