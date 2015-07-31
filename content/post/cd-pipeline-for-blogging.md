@@ -96,7 +96,7 @@ Then to push each set of changes:
 	git commit -m "generated content"
 	git push origin master
 
-We have now created content, rendered it as HTML and published it to a live website.  This represents all of the component parts of a nice publishing workflow - lets automate it!
+We have now [created content]({{< ref "#creating-content" >}}), [rendered it as HTML]({{< ref "#generating-the-html" >}}) and [published it]({{< ref "#publishing-to-github-pages" >}}) to a live website.  This represents all of the component parts of a nice publishing workflow - lets automate it!
 
 ## Automating the process with Wercker
 
