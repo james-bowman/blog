@@ -13,13 +13,13 @@ aliases = ["/post/blogging-cd-pipeline/"]
 
 This is the start of my new blog.  It is something I have been meaning to do for a long time but somehow never quite got around to.  Part of the problem for me was choosing a blogging platform and tool chain - I was overwhelmed by the number of different options available.  I know lots of people use platforms like [Wordpress] but I always liked the idea of static generators like [Jekyll].
 
-I recently stumbled across [Hugo].  Hugo is a static generator like [Jekyll] where content (usually written in a format like [markdown](https://en.wikipedia.org/wiki/Markdown)) is rendered offline as static HTML and then published to a hosting platform.  A benefit of this approach over using a platform like [Wordpress] is that the generated HTML can be hosted anywhere.  Hugo interested me in particular because it is written in [Go], which I am familiar with, and is reported to be extremely fast (important when waiting for content updates to render).  The steps I originally followed to setup my blog were primarily inspired by [the tutorial on the Hugo site](http://gohugo.io/tutorials/automated-deployments/). 
+I recently stumbled across [Hugo].  Hugo is a static generator like [Jekyll] where content (usually written in [markdown](https://en.wikipedia.org/wiki/Markdown)) is rendered offline as static HTML and then published to a hosting platform.  A benefit of this approach over using a platform like [Wordpress] is that the generated HTML can be hosted anywhere.  [Hugo] interested me in particular because it is written in [Go], which I am familiar with, and is reported to be extremely fast (important when waiting for content updates to render).  The steps I originally followed to setup my blog were primarily inspired by [the tutorial on the Hugo site](http://gohugo.io/tutorials/automated-deployments/). 
 
 ## GitHub and GitHub Pages
 
 I decided to use [GitHub Pages] to host the site since they offer a free personal site for each GitHub account and I intended to use [GitHub](http://github.com) for the source content anyway so using the same service for both made sense.
 
-Although I am using GitHub to store both my source content and generated HTML, I wanted to keep them separate and so set up 2 new, empty repositories on GitHub:
+Although I am using GitHub to store both my source content and generated HTML, I wanted to keep them separate and so setup 2 new, empty repositories on GitHub:
 
 1. `blog` - to store the source content.  The name of this repository is not important but for the remainder of this post, I will refer to it as 'blog'.
 1. `<GitHub username>.github.io` - to host the generated static HTML.  The name of this repository must exactly match the pattern shown (this is where Github Pages serves the site from).
@@ -102,9 +102,7 @@ We have now [created content]({{< ref "#creating-content" >}}), [rendered it as 
 
 [Wercker] is a hosted [Continuous Integration](http://www.thoughtworks.com/continuous-integration)/[Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) service that has a growing community developing reusable build and deployment pipelines.  It has existing Hugo and GitHub Pages integrations built by the Werker community making it ideal for my needs.
 
-Wercker is free to sign up for an account and you can sign up with your GitHub account (in fact I had to do this in order to grant my wercker account with the appropriate access/permission to my GitHub repositories).
-
-Once registered, ensure that your account profile is connected to your Git account.  This can be achieved by clicking on your icon in the top right hand corner of the screen and then selecting `settings`.  Then select `Git connections` to connect your GitHub account.
+Wercker is free to sign up for an account and you can sign up with your GitHub account.  Once registered, ensure that your account profile is connected to your GitHub account.  This can be achieved by clicking on your icon in the top right hand corner of the screen and then selecting `settings`.  Then select `Git connections` to connect your GitHub account.
 
 Now we can setup our pipeline by creating a new application.  Select `Create` and select `Application`.  Work through the process of setting up a new application selecting GitHub as the Git provider, and choosing 'blog' as the repository.  Select yourself as the owner and configure access so that `wercker will checkout the code without using an SSH key`.  Finally uncheck the `Docker enabled` checkbox and click next step.  You can finally choose whether to make your pipeline public or private.  This is a personal choice and has no impact on how things work.  Werker will now start building your code.
 
@@ -122,12 +120,12 @@ deploy:
     steps:
         - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
-        domain: <Github username>.github.io
+        domain: <GitHub username>.github.io
         basedir: public
-        repo: <Github username>/<Github username>.github.io
+        repo: <GitHub username>/<GitHub username>.github.io
 ```
 
-Be careful to replace any text within <> with your actual values e.g. `<Github username>` should be replaced with your specific Github username.  Once finished, commit and push the wercker.yml file to Github:
+Be careful to replace any text within <> with your actual values e.g. `<GitHub username>` should be replaced with your specific GitHub username.  Once finished, commit and push the wercker.yml file to GitHub:
 
 	git add wercker.yml
 	git commit -m "Add wercker.yml"
