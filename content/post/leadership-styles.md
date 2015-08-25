@@ -3,12 +3,12 @@ categories = ["Coaching"]
 date = "2015-07-27T06:39:34+01:00"
 description = "Different leadership and coaching styles for different teams and situations"
 draft = false
-tags = ["coaching", "leadership", "development", "influencing"]
+tags = ["coaching", "leadership", "development", "influencing", "maturity", "critical thinking"]
 title = "Leadership styles"
 
 +++
 
-Traditionally people used to think leadership was an inherent quality and that individuals have their own distinct leadership style.  Each style has its own strengths and weaknesses, situations where it excels and others where it is less effective.  Therefore, whilst it is natural to have a preferred style that one feels comfortable with, a good leader should be able to adapt their style depending upon the situation or context, the team or individual being influenced and the task at hand.  This is called [Situational Leadership].
+Traditionally people used to think leadership was an inherent quality and that individuals have their own distinct leadership style.  In practice, each style has its own strengths and weaknesses, situations where it excels and others where it is less effective.  Therefore, whilst it is natural to have a preferred style that one feels comfortable with, a good leader should be able to adapt their style depending upon the situation or context, the team or individual being influenced and the task at hand.  This is called [Situational Leadership].
 
 [Situational Leadership] is a theory of leadership and influencing developed by [Paul Hersey](https://en.wikipedia.org/wiki/Paul_Hersey) and [Ken Blanchard](https://en.wikipedia.org/wiki/Ken_Blanchard).  The theory assumes that an individual or team's maturity is an evolutionary progression from low to high.  When individuals approach a task or activity for the first time, they have very little knowledge or skill but these develop over time with education, practice and experience.  As an individual or team's maturity increases, they respond better to less directive influence from a leader or coach and conversely, people with low maturity in a given task respond better to more directive influencing styles.  
 
@@ -23,7 +23,7 @@ Leadership and teaching styles can be broadly categorised into two types: direct
 </a>
 <sup><sub>image: based upon [Myles Downey's Spectrum of Coaching Skills][1]</sub></sup>
 
-This diagram shows that a leader can use different techniques to adapt their style depending upon the team or individual being led.  In addition, push and pull techniques work well in different situations and can yield different outcomes.  For example, push techniques can be effective in achieving compliance and yielding fast results wheras Pull/non-directive techniques tend to take much longer but can achieve commitment and behavioural change.  Pull techniques also tend to be very effective in persuasion and overcoming resistence.
+This diagram shows that a leader can use different techniques and adapt their style depending upon the team or individual being led.  In addition to maturity, there are other reasons a leader or coach might choose different influencing techniques.  "Push" and "Pull" techniques can yield very different outcomes so can be better suited to particular situations.  For example, "Push" techniques can be effective in achieving compliance and yielding fast results wheras "Pull" techniques tend to take much longer but can be more "sticky", achieving lasting commitment and behavioural change.  Pull techniques also tend to be more effective in persuasion and overcoming resistence and can be used to help stimulate critical thinking.
 
 
 [1]: https://books.google.co.uk/books/about/Effective_Coaching.html?id=zifwAAAAMAAJ

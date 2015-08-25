@@ -1,14 +1,14 @@
 +++
 categories = ["Coaching"]
 date = "2015-08-18T16:51:47+01:00"
-description = "The use of Socratic questioning and the Socratic method in influencing, leading and coaching"
+description = "The use of Socratic questioning and the Socratic method in influencing, leading and coaching to stimulate critical thinking"
 draft = false
 tags = ["coaching", "leadership", "development", "influencing", "psychology", "critical thinking"]
 title = "Socratic questions"
 
 +++
 
-In my last [blog post]({{< ref "leadership-styles.md" >}}), I looked at situational leadership and how different influencing styles and techniques can be effective in different contexts.  'Push' (directive) influencing techniques are more focused on "telling" whereas 'Pull' (non-directive) techniques tend to involve the use of questions and reflection to guide.  One particular technique involving the use of questions to influence in this way is [Socratic questioning].
+In my last [blog post]({{< ref "leadership-styles.md" >}}), I looked at situational leadership and how different influencing styles and techniques can be effective in different contexts with teams and individuals at different levels of maturity.  'Push' (directive) influencing techniques are more focused on "telling" whereas 'Pull' (non-directive) techniques tend to involve the use of questions and reflection to guide.  One particular technique involving the use of questions to influence in this way is [Socratic questioning].
 
 [Socratic questioning] is a practice adapted from the [Socratic method](https://en.wikipedia.org/wiki/Socratic_method) to stimulate critical thinking.  It involves systematic questioning to explore ideas and critically analyse logic.  It is frequently used in education, psychological therapy and law schools.  
 
@@ -20,6 +20,7 @@ There are essentially 6 types of Socratic questions (based upon those proposed b
 Can you give me an example?<br>
 Could you explain further?<br>
 Are you saying X?<br>
+What is the problem you are trying to solve?<br>
 
 #### 2. Challenging assumptions
 Is that always the case? <br>
