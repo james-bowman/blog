@@ -55,7 +55,7 @@ What else might I ask? <br>
 
 ### References
 
-R. W. Paul: [_The Thinkers Guide to The Art of Socratic Questioning, 2007_][R. W. Paul]
+R. W. Paul, L. Elder: [_The Thinkers Guide to The Art of Socratic Questioning, 2007_][R. W. Paul]
 
 
 
