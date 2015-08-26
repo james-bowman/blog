@@ -8,7 +8,7 @@ title = "Socratic questions"
 
 +++
 
-In my last [blog post]({{< ref "leadership-styles.md" >}}), I looked at situational leadership and how different influencing styles and techniques can be effective in different contexts with teams and individuals at different levels of maturity.  'Push' (directive) influencing techniques are more focused on "telling" whereas 'Pull' (non-directive) techniques tend to involve the use of questions and reflection to guide.  One particular technique involving the use of questions to influence in this way is [Socratic questioning].
+In my last [blog post]({{< ref "leadership-styles.md" >}}), I looked at situational leadership and how different influencing styles and techniques can be effective in different contexts with people at different levels of maturity.  'Push' (directive) influencing techniques are more focused on "telling" whereas 'Pull' (non-directive) techniques tend to involve the use of questions and reflection to guide.  One particular technique involving the use of questions to influence in this way is [Socratic questioning].
 
 [Socratic questioning] is a practice adapted from the [Socratic method](https://en.wikipedia.org/wiki/Socratic_method) to stimulate critical thinking.  It involves systematic questioning to explore ideas and critically analyse logic.  It is frequently used in education, psychological therapy and law schools.  
 
