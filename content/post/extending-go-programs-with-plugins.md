@@ -84,7 +84,7 @@ Cons:
 
 ## Compiled-in extensions - In more depth
 
-I ended up choosing the compiled-in extensions approach for [my chat bot][talbot]. The compiled-in approach means that third-parties can clone or fork the [repository][Talbot], add their plugins/extensions into the appropriate package and then compile the application (with the plugins included).  This approach relies on a couple of Go language features which are worth considering in more detail.
+I ended up choosing the compiled-in extensions approach for [my chat bot][talbot]. The compiled-in approach means that third-parties can clone or fork the [repository][talbot], add their plugins/extensions into the appropriate package and then compile the application (with the plugins included).  This approach relies on a couple of Go language features which are worth considering in more detail.
 
 ### The init() function
 
