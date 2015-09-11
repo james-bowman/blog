@@ -72,7 +72,7 @@ We found ScreenHero the easiest to use and the most flexible as it allowed multi
 
 - Email is awful
 
-- The person with higher network bandwidth should host a sharing session with tools like Google hangouts, VNC, ScreenHero, etc.
+- The person with higher network bandwidth should host the sharing session when using tools like Google hangouts, VNC, ScreenHero, etc.
 
 - Use combinations of tools for different purposes e.g. Video Conferencing for discussions, Video Conferencing and screen sharing for demoing especially to larger groups, Collaborative editing tools for pairing and use communication tools like chat *all the time*.
 
