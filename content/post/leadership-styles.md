@@ -5,6 +5,7 @@ description = "Different leadership and coaching styles for different teams and 
 draft = false
 tags = ["coaching", "leadership", "development", "influencing", "maturity", "critical thinking"]
 title = "Leadership styles"
+author = "James Bowman"
 
 +++
 

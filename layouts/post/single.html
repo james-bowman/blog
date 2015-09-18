@@ -14,8 +14,8 @@
                          <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
  
                         <p class="post-meta">
-                            {{ with .Params.author }}
-                                By <strong class="post-author">{{ . }}</strong>
+                            {{ if isset .Params "author" }}
+                                By <a href="{{ .Site.Params.googleplus }}?rel=author">{{ .Params.author }}</a>
                             {{ end }}
                             {{ if isset .Params "categories" }}
                                 under 

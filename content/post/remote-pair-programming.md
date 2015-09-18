@@ -5,6 +5,7 @@ description = "Experiences of remote pair programming and comparisons of tools f
 draft = false
 tags = ["development", "agile", "pair programming", "collaboration", "distributed/remote working"]
 title = "Remote pair programming"
+author = "James Bowman"
 
 +++
 

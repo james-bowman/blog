@@ -8,6 +8,7 @@ categories = [
   "DevOps",
 ]
 aliases = ["/post/blogging-cd-pipeline/"]
+author = "James Bowman"
 
 +++
 

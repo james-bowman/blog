@@ -6,6 +6,7 @@ tags = [ "development", "go", "go-lang", "java", "plugins", "RPC", "scripting" ]
 title = "Extending Go programs with plugins"
 description = "A look at some of the options for extending and customising Go Lang programs with plug-ins"
 aliases = ["/post/extending-go-programs-with-plug-ins/"]
+author = "James Bowman"
 
 +++
 
