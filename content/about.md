@@ -18,7 +18,7 @@ All views expressed on this site are my own and do not necessarily represent tho
 <link itemprop="url" href="http://www.jamesbowman.me/" />
 <link itemprop="sameAs" href="https://plus.google.com/+JamesBowman1978" />
 <link itemprop="sameAs" href="http://www.twitter.com/jamesebowman" />
-<link itemprop="sameAs" href="https://uk.linkedin.com/in/jamesedwardbowman" />
+<link itemprop="sameAs" href="https://www.facebook.com/james.bowman.52831" />
 <link itemprop="sameAs" href="https://uk.linkedin.com/in/jamesedwardbowman" />
 <link itemprop="sameAs" href="https://github.com/james-bowman" />
 
