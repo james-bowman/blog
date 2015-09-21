@@ -15,7 +15,10 @@ I live in <span itemprop="homeLocation" itemscope itemtype="http://schema.org/Pl
 <br>
 All views expressed on this site are my own and do not necessarily represent those of the company I work for.
 
+<link rel="me" href="https://plus.google.com/+JamesBowman1978?rel=author" />
+
 <link itemprop="url" href="http://www.jamesbowman.me/" />
+
 <link itemprop="sameAs" href="https://plus.google.com/+JamesBowman1978" />
 <link itemprop="sameAs" href="http://www.twitter.com/jamesebowman" />
 <link itemprop="sameAs" href="https://www.facebook.com/james.bowman.52831" />
