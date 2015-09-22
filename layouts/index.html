@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
 
-<div id="layout" class="pure-g">
+<div id="layout" class="pure-g" itemscope itemtype="http://schema.org/Blog">
     {{ partial "sidebar.html" . }}
 
     <div class="content pure-u-1 pure-u-md-3-4">
@@ -8,34 +8,35 @@
             <!-- A wrapper for all the blog posts -->
             <div class="posts">
 				{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-				<div itemscope itemtype="http://schema.org/Blog">
+				<div>
                 {{ range .Paginator.Pages }}
-                <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
-                <section class="post">
+                <section class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+					<meta itemprop="datePublished" content='{{ .Date.Format "2006-01-02T15:04Z" }}'/>	
+					<h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
                     <header class="post-header">
 
-                        <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+                        <a itemprop="url" href="{{ .Permalink }}" class="post-title"><span itemprop="headline"><span itemprop="name">{{ .Title }}</span></span></a>
 
                         <p class="post-meta">
                             {{ with .Params.author }}
-                                By <strong class="post-author">{{ . }}</strong>
+                                By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><strong itemprop="name" class="post-author">{{ . }}</strong></span>
                             {{ end }}
                             {{ if isset .Params "categories" }}
                                 under 
                                 {{ $baseUrl := .Site.BaseURL }}
-                                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+                                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}"><span itemprop="articleSection">{{ . }}</span></a>{{ end }}
                             {{ end }}
                         </p>
                     </header>
 
                     <!--<div class="post-description">-->
-					<div class="summary">
+					<div class="summary" itemprop="description">
                         {{ .Summary }}
                     </div>
 					{{ if .Truncated }}
   					<div class="read-more-link">
 					<p>
-  						<a href="{{ .RelPermalink }}">Read More…</a>
+  						<a href="{{ .Permalink }}">Read More…</a>
   					</div>
   					{{ end }}
                 </section>
