@@ -25,6 +25,12 @@
 					<h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
                     <header class="post-header">
 
+						{{ if isset .Params "image" }}
+							<link itemprop="image" href="{{ .Params.image }}" />
+						{{ else }}
+							<link itemprop="image" href="/selfportraitBW.jpg" />
+						{{ end }}
+
                         <a itemprop="url" href="{{ .Permalink }}" class="post-title"><span itemprop="headline"><span itemprop="name">{{ .Title }}</span></span></a>
 
                         <p class="post-meta">
