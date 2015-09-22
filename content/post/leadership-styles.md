@@ -6,6 +6,7 @@ draft = false
 tags = ["coaching", "leadership", "development", "influencing", "maturity", "critical thinking"]
 title = "Leadership styles"
 author = "James Bowman"
+image = "/post/Coaching Spectrum.001.jpg"
 
 +++
 

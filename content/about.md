@@ -7,6 +7,10 @@ title = "About"
 <p>
 <div itemscope itemtype="http://schema.org/Person"> 
 
+<div class="post-share-links">
+	<img itemprop="image" src="/selfportraitBW.jpg" alt="James Bowman Photograph" class="pure-img" />
+</div>
+<br />
 My name is <span itemprop="name"><span itemprop="givenName">James</span> <span itemprop="familyName">Bowman</span></span> and I am the <span itemprop="jobTitle">Chief Architect</span> at <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><a itemprop="sameAs" href="http://www.markelinternational.com/"><span itemprop="name">Markel International</span></a></span>.  I love coding both at work and in my spare time and am interested in Go, microservices, continuous delivery and DevOps. In addition to development, I am fascinated by coaching, behaviour and organisational change.
 <br>
 <br>

@@ -21,7 +21,7 @@
                             {{ if isset .Params "categories" }}
                                 under 
                                 {{ $baseUrl := .Site.BaseURL }}
-                                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+                                {{ range .Params.categories }}<span itemprop="articleSection"><a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a></span>{{ end }}
                             {{ end }}
                         </p>
                      </header>
@@ -37,7 +37,14 @@
                             <a href="#" data-type="linkedin" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-description="{{ .Description }}" data-media="" class="prettySocial fa fa-linkedin"></a>
                         </div>
                     </div>
-                     <section itemprop="description" class="post-description">
+					
+					{{ if isset .Params "image" }}
+						<link itemprop="image" href="{{ .Params.image }}" />
+					{{ else }}
+						<link itemprop="image" href="/selfportraitBW.jpg" />
+					{{ end }}
+					
+                     <section itemprop="articleBody" class="post-description">
                          {{ .Content }}
                      </section>
  					<p>
