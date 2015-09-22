@@ -19,7 +19,7 @@ All views expressed on this site are my own and do not necessarily represent tho
 
 <link rel="me" href="https://plus.google.com/+JamesBowman1978?rel=author" />
 
-<link itemprop="url" href="http://www.jamesbowman.me/" />
+<link itemprop="url" href="http://www.jamesbowman.me/about/" />
 
 <link itemprop="sameAs" href="https://plus.google.com/+JamesBowman1978" />
 <link itemprop="sameAs" href="http://www.twitter.com/jamesebowman" />
