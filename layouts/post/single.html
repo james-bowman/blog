@@ -7,15 +7,16 @@
          <div>
              <!-- A wrapper for all the blog posts -->
              <article class="posts" itemscope itemtype="http://schema.org/BlogPosting">
-                <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
+                <meta itemprop="datePublished" content='{{ .Date.Format "2006-01-02T15:04Z" }}'/>
+				<h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
                  <div class="post">
                      <header class="post-header">
  
-                        <a itemprop="url" href="{{ .Permalink }}" class="post-title"><span itemprop="name">{{ .Title }}</span></a>
+                        <a itemprop="url" href="{{ .Permalink }}" class="post-title"><span itemprop="headline"><span itemprop="name">{{ .Title }}</span></span></a>
  
                         <p class="post-meta">
                             {{ if isset .Params "author" }}
-                                By <a href="{{ .Site.Params.googleplus }}?rel=author">{{ .Params.author }}</a>
+                                By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="{{ .Site.Params.googleplus }}?rel=author">{{ .Params.author }}</a></span></span>
                             {{ end }}
                             {{ if isset .Params "categories" }}
                                 under 
