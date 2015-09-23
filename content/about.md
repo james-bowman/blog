@@ -2,6 +2,7 @@
 date = "2015-07-02T18:02:06+01:00"
 draft = false
 title = "About"
+description = "About James Bowman - Software development, DevOps and coaching"
 
 +++
 <p>
