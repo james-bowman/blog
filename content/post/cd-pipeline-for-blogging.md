@@ -39,7 +39,9 @@ So that Git does not try to version control the generated HTML as part of this r
 
 ## Hugo
 
-[Hugo] is an open source static site generator developed in [Go].  It is designed to be executed from the command line and it can be downloaded and installed locally.  It can be downloaded [here](https://github.com/spf13/hugo/releases).
+[Hugo] is an open source static site generator developed in [Go].  It is designed to be executed from the command line and it can be downloaded and installed locally.  It can be downloaded from the following URL:
+
+https://github.com/spf13/hugo/releases
 
 Once installed, it can be executed on the command line to setup an initial workspace for all source site content.  The command should be executed from within the `blog` directory created when we cloned the Github repository above. 
 
