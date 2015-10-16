@@ -2,7 +2,7 @@
 categories = [ "Development" ]
 date = "2015-07-14T07:47:59+01:00"
 draft = false
-tags = [ "development", "go", "go-lang", "java", "plugins", "RPC", "scripting" ]
+tags = [ "development", "go", "golang", "java", "plugins", "RPC", "scripting" ]
 title = "Extending Go programs with plugins"
 description = "A look at some of the options for extending and customising Golang programs with plug-ins"
 aliases = ["/post/extending-go-programs-with-plug-ins/"]
@@ -10,7 +10,7 @@ author = "James Bowman"
 
 +++
 
-I am really enjoying developing in [Go] but very occasionally come across things that aren't really possible, or considered idiomatic, in Go.  Go is a very opinionated language which is a good thing as it keeps the language and tool chain very simple but also means if you need to do something unusual, it can sometimes feel like you are fighting the language.  One example of this is developing [plugin]s.
+I am really enjoying programming in Google's [Go] language but very occasionally come across things that aren't really possible, or considered idiomatic, in Go.  Go is a very opinionated language which is a good thing as it keeps the language and tool chain very simple but also means if you need to do something unusual, it can sometimes feel like you are fighting the language.  One example of this is developing [plugin]s.
 
 [Plugin]s are a way of allowing third parties to extend or customise the behaviour of an existing piece of software.  This can be useful in a variety of contexts but, most recently, whilst I was working on a [chat bot][talbot] I wanted to use plugins to allow people to easily extend the bot's capabilities without having to change the existing [code][talbot].
 
