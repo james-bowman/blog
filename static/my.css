@@ -1,0 +1,45 @@
+.social-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.social-item {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.social-item a {
+    background: transparent;
+    color: #fff;
+    margin-top: 1em;
+	font-size: 130%;
+    font-weight: bold;
+    font-family: "Oxygen", sans-serif;
+}
+.social-item a:hover,
+.social-item a:focus {
+    text-decoration: none;
+}
+
+.mynav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.mynav-item {
+    display: block;
+    /**display: inline;*/
+    zoom: 1;
+}
+.mynav-item a {
+    background: transparent;
+    color: #fff;
+    margin-top: 1em;
+     font-size: 85%;
+    font-weight: bold;
+    font-family: "Oxygen", sans-serif;
+}
+.mynav-item a:hover,
+.mynav-item a:focus {
+    text-decoration: none;
+}

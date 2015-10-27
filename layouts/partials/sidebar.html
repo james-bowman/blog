@@ -8,32 +8,32 @@
 		<br />
 		<nav class="nav">
 			<ul class="nav-list">
-    			<li><a href="{{ .Site.BaseURL }}">Blog</a></li>
-    			<li><a href="{{ .Site.BaseURL }}about/">About</a></li>
-    			<li><a href="{{ .Site.BaseURL }}post/">Archives</a></li>
+    			<li class="mynav-item"><a class="pure-button" href="{{ .Site.BaseURL }}">Blog</a></li>
+    			<li class="mynav-item"><a class="pure-button" href="{{ .Site.BaseURL }}about/">About</a></li>
+    			<li class="mynav-item"><a class="pure-button" href="{{ .Site.BaseURL }}post/">Archives</a></li>
 			</ul>
 		</nav>
 		</div>
 		<br />
         <nav class="nav">
-            <ul class="nav-list">
+            <ul class="social-list">
                 {{ with .Site.Params.twitter }}
-                <li class="nav-item">
-                    <a class="pure-button" href="https://twitter.com/{{ . }}"><i class="fa fa-twitter"></i> Twitter</a>
+                <li class="social-item">
+                    <a class="pure-button" href="https://twitter.com/{{ . }}"><i class="fa fa-twitter"></i></a>
                 </li>
                 {{ end }}
                 {{ with .Site.Params.github }}
-                <li class="nav-item">
-                    <a class="pure-button" href="{{ . }} "><i class="fa fa-github-alt"></i> GitHub</a>
+                <li class="social-item">
+                    <a class="pure-button" href="{{ . }} "><i class="fa fa-github-alt"></i></a>
                 </li>
                 {{ end }}
 				{{ with .Site.Params.linkedin }}
-                <li class="nav-item">
-                    <a class="pure-button" href="{{ . }} "><i class="fa fa-linkedin"></i> LinkedIn</a>
+                <li class="social-item">
+                    <a class="pure-button" href="{{ . }} "><i class="fa fa-linkedin"></i></a>
                 </li>
                 {{ end }}
-                <li class="nav-item">
-                    <a class="pure-button" href="http://feeds.jamesbowman.me/jamesbowman/blog" type="application/rss+xml"><i class="fa fa-rss"></i> RSS</a>
+                <li class="social-item">
+                    <a class="pure-button" href="http://feeds.jamesbowman.me/jamesbowman/blog" type="application/rss+xml"><i class="fa fa-rss"></i></a>
 				</li>
             </ul>
         </nav>
