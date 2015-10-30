@@ -47,13 +47,17 @@
 
                     <!--<div class="post-description">-->
 					<div class="summary" itemprop="description">
-                        {{ .Summary }}{{ if .Truncated }}... <a href="{{ .Permalink }}">Read More &raquo;</a>{{ end }}
+                        {{ .Summary }}{{ if .Truncated }}...{{ end }}
                     </div>
+					{{ if .Truncated }}
+  					<div class="read-more-link">
+  						<a href="{{ .Permalink }}">Read More &rarr;</a>
+  					</div>
+  					{{ end }}
                 </section>
                 {{ end }}
             </div>
             {{ partial "pagination.html" . }}
-			<div style="text-align:center" class="center"><a href="{{ $.Site.BaseURL }}/post/">Blog Archives</a></div>
             {{ partial "footer.html" . }}
         </div>
     </div>
