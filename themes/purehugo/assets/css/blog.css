@@ -266,24 +266,22 @@ h3 {
     color:#aaa
 }
 
-@media (min-width: 70em) {
-    .content {
+@media (min-width: 48em) {
+	.content {
         padding: 2em 3em 0;
         margin-left: 25%;
     }
 
-    .header {
-        margin: 80% 2em 0;
-        text-align: right;
-    }
-/*	
-	text-align: center;
-    top: auto;
-    margin: 3em auto;
-*/
     .sidebar {
         position: fixed;
         top: 0;
         bottom: 0;
+    }	
+}
+
+@media (min-width: 70em) {
+    .header {
+        margin: 80% 2em 0;
+        text-align: right;
     }
 }
