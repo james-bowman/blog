@@ -63,7 +63,7 @@ h3 {
     background: transparent;
     color: #fff;
     margin-top: 1em;
-	font-size: 100%;
+	font-size: 130%;
     font-weight: bold;
     font-family: "Oxygen", sans-serif;
 }
@@ -286,13 +286,4 @@ h3 {
         top: 0;
         bottom: 0;
     }
-	
-	.social-item a {
-	    background: transparent;
-	    color: #fff;
-	    margin-top: 1em;
-		font-size: 130%;
-	    font-weight: bold;
-	    font-family: "Oxygen", sans-serif;
-	}
 }
