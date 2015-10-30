@@ -16,7 +16,7 @@
  
                         <p class="post-meta">
                             {{ if isset .Params "author" }}
-                                By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="{{ .Site.Params.googleplus }}?rel=author">{{ .Params.author }}</a></span></span>
+                                By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="{{ .Site.Params.googleplus }}?rel=author"><span itemprop="name">{{ .Params.author }}</span></a></span>
                             {{ end }}
                             {{ if isset .Params "categories" }}
                                 under 

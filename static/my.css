@@ -1,3 +1,9 @@
+.myheader {
+    text-align: center;
+    top: auto;
+    margin: 3em auto;
+}
+
 .social-list {
     margin: 0;
     padding: 0;
