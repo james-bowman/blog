@@ -47,14 +47,8 @@
 
                     <!--<div class="post-description">-->
 					<div class="summary" itemprop="description">
-                        {{ .Summary }}
+                        {{ .Summary }}{{ if .Truncated }}... <a href="{{ .Permalink }}">Read More &raquo;</a>{{ end }}
                     </div>
-					{{ if .Truncated }}
-  					<div class="read-more-link">
-					<p>
-  						<a href="{{ .Permalink }}">Read More…</a>
-  					</div>
-  					{{ end }}
                 </section>
                 {{ end }}
             </div>
