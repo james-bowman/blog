@@ -82,6 +82,7 @@ h3 {
     /**display: inline;*/
     zoom: 1;
 }
+
 .mynav-item a {
     background: transparent;
     color: #fff;
@@ -90,9 +91,15 @@ h3 {
     font-weight: bold;
     font-family: "Oxygen", sans-serif;
 }
+
 .mynav-item a:hover,
 .mynav-item a:focus {
     text-decoration: none;
+	color: rgb(61, 79, 93);
+}
+
+.nav-button {
+	margin: 1em;
 }
 
 .brand-title,
