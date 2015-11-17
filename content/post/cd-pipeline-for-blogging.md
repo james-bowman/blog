@@ -29,23 +29,23 @@ I use Git on a regular basis to version code I write and am used to using the co
 
 https://git-scm.com/downloads
 
-To author content locally, clone the source content Github repository created in the first step.
-
-	git clone https://github.com/<Github username>/blog.git
-
-Where `<Github username>` should be replaced by your Github username.  This will create a new directory called `blog` under the directory from where you executed the command.
-
-So that Git does not try to version control the generated HTML as part of this repository (we want to store that in our second repository) I created a `.gitignore` file inside the blog directory containing `/public` (/public is the output directory to which our generated HTML will be written).
-
 ## Hugo
 
 [Hugo] is an open source static site generator developed in [Go].  It is designed to be executed from the command line and it can be downloaded and installed locally.  It can be downloaded from the following URL:
 
 https://github.com/spf13/hugo/releases
 
-Once installed, it can be executed on the command line to setup an initial workspace for all source site content.  The command should be executed from within the `blog` directory created when we cloned the Github repository above. 
+Once installed, it can be executed on the command line to setup an initial workspace for all source site content.  The following command will create a subdirectory called `blog` within the current directory containing the initial workspace and directory structure for your Hugo site. 
 
-	hugo new site .
+	hugo new site blog
+
+Once the workspace has been created we will need to add it to our GitHub repository.  First, so that Git does not try to version control the generated HTML as part of this repository (we want to store that in our second repository) I created a `.gitignore` file inside the `blog` directory containing `/public` (/public is the output directory to which our generated HTML will be written).  Then type the following from within the `blog` directory to add the workspace to GitHub, substituting your GitHub username for `<Github username>`.
+
+	git init
+	git add -A .
+	git commit -m "initial commit"
+	git remote add origin https://github.com/<Github username>/blog.git
+	git push -u origin master
 
 Hugo uses interchangeable 'themes' to style generated websites.  There are a bunch of pre-developed themes to choose from on [GitHub](https://github.com/spf13/hugoThemes/).  To add one of these themes simply clone it into a `theme` folder under the content workspace as follows:
 
