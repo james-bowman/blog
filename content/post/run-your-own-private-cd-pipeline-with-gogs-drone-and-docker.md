@@ -8,17 +8,30 @@ title = "Run your own private CD pipeline with GOGS, Drone and Docker"
 
 +++
 
-Nowdays there are lots of services available on the internet supporting continuous delivery.  Tools such as [GitHub](http://github.com/) and Atlassian's [BitBucket](http://bitbucket.org/) for version control, and automated build, test and deployment pipeline tools like [Travis](http://travis-ci.com), [CircleCI](http://circleci.com), [Codeship](http://www.codeship.com), [Wercker](http://wercker.com) and [Drone](http://drone.io).  Whilst they offer service plans to suit most people in terms of price and privacy, there are reasons an organisation might be reluctant to use public services for these purposes.  In this post, I explore how to create a privately hosted continuous delivery pipeline using open source tools.  
+Nowdays there are lots of services available on the internet supporting continuous delivery.  Tools such as [GitHub](http://github.com/) and Atlassian's [BitBucket](http://bitbucket.org/) for version control, and automated build, test and deployment pipeline tools like [Travis](http://travis-ci.com), [CircleCI](http://circleci.com), [Codeship](http://www.codeship.com), [Wercker](http://wercker.com) and [Drone](http://drone.io).  Whilst they offer service plans to suit most people in terms of price and privacy, there are reasons an organisation might be reluctant to use public services for these purposes.  In this post, I explore how to create a privately hosted continuous delivery pipeline using freely available, open source versions of these tools.  
 
 In the last couple of years there seems to have been an explosion in the number of CI/CD services for automated build and deployment pipelines e.g. [Travis](http://travis-ci.com), [CircleCI](http://circleci.com), [Codeship](http://www.codeship.com), [Wercker](http://wercker.com) and [Drone](http://drone.io).  This new generation of CI/CD tools differ from more traditional tools like [Jenkins](https://jenkins-ci.org/) and [TeamCity](https://www.jetbrains.com/teamcity/) in that they push configuration for the build out of the tool and back into the source code repository where it is versioned along with the code it is building.  Typically the CI tool configuration takes the form of a YAML file in the root of the repository with tool specific configuration settings.  Furthermore, many of these newer tools use containerisation technologies like Docker to create isolated, repeatable and disposable build environments for different technology stacks.  This enables the service to support a wide range of technology stacks simultaneously without requiring the superset of all build dependencies to be installed on each build agent.  This can be particularly valuable with microservice based architectures where services are often developed in differing languages and technology stacks. 
 
+## Anatomy of a continuous delivery build and deployment pipeline
 
-pipeline as code
-programming in your CI/CD tool - hold
-https://www.thoughtworks.com/radar/techniques/programming-in-your-ci-cd-tool
+A basic continuous delivery build and deployment pipeline is comprised of the following component parts:
+
+1. Version control server - to store and version the source code
+2. CI/CD server - to orchestrate the automatic building, testing and deployment of the software
+3. Binary artifact repository - to store the built software artifacts.
+4. Deployment target - to host the deployed, executing software
+
+Each of these component parts can be deployed on separate physical hosts but for the purposes of this example, we will run them all on the same physical host.  To provide separation, we will run each component within its own, separate Docker container.
+
+## Getting started - installing Docker
+
+We are going to run each of the CD pipeline components as Docker containers so before we get started, we should download and install Docker.  
+
+Some people find Docker a little confusing at first.  Specifically they are not sure whether it is a virtualisation tool like Vagrant or Otto, or underlying technology like VMWare or Virtual Box or if it is a configuration management or provisioning tool like Chef, Puppet or Ansible.  In reality, Docker is none of these things (although there is definititely a degree of overlap).  Docker is best thought of as a means of packaging applications and providing a mechanism to run them.  In this way it is probably more closely comparable with other packaging systems like Jar files or Nuget, NPM or RPM packages - although with some significant differences.
 
 
-## Installing docker
+
+Docker uses aspects of the Linux kernel to provide separation between containers.  For this reason, it only runs on Linux hosts or a Linux virtual machine.  Fortunately, the folks at Docker have provided an installation for Windows and Mac OSX that comes bundled with a Linux VM specifically for hosting Docker.
 
 ## Setup GOGS
 
@@ -88,3 +101,8 @@ Drone Wall
 
 	docker run -d -p 3000:3000 -e API_SCHEME=HTTP -e API_DOMAIN=192.168.99.100 -e API_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXh0IjoiamFtZXMuZWR3YXJkLmJvd21hbiIsInR5cGUiOiJ1c2VyIn0.DajYihXxoFN2gR7vtqbwb71xfXo6Y4gaOMIFt9Zh1I8 -e API_PORT=80 scottwferg/drone-wall
 
+
+
+pipeline as code
+programming in your CI/CD tool - hold
+https://www.thoughtworks.com/radar/techniques/programming-in-your-ci-cd-tool
