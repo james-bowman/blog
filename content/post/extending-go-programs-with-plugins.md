@@ -33,15 +33,15 @@ The Go compiler statically links libraries at compilation time which results in 
 
 Given the language's constraints around dynamic linking, supporting extensibility through plugins is something a lot of people have attempted in Go and a number of alternative approaches exist including but not limited to:
 
-1. [Out of process RPC calls]({{< ref "#1-out-of-process-rpc-calls" >}})
+1. [Out of process communication]({{< ref "#1-out-of-process-communication" >}})
 1. [Embedded scripting]({{< ref "#2-embedded-scripting" >}})
 1. [Compiled-in extensions]({{< ref "#3-compiled-in-extensions" >}})
 
 Each of these approaches have their own strengths and weaknesses which I will discuss over the next few sections.  
 
-### 1. Out of process RPC calls
+### 1. Out of process communication
 
-This is the approach taken by Hashicorp's [Packer](https://www.packer.io/docs/extend/plugins.html) tool.  Essentially the 'plugin' runs as a separate process and then the existing application communicates with the Plug-in via RPC (Remote Procedure Calls).  This means that the plugin does not need to be compiled into the existing application or statically linked but can be integrated dynamically at runtime.  Other examples of this approach are [Pie](http://npf.io/2015/05/pie/) and [Pingo](https://github.com/dullgiulio/pingo).  Pie is interesting because instead of using RPC over TCP/IP it communicates with the plugin process via stdin and stdout.  This opens up other interesting alternatives to using RPC to communicate between the two processes such as passing information to the plugin as command line parameters and returning data using stdout.  Some of the pros and cons of this approach are as follows:
+This is the approach taken by Hashicorp's [Packer](https://www.packer.io/docs/extend/plugins.html) tool.  Essentially the 'plugin' runs as a separate process and then the existing application communicates with the Plug-in via RPC (Remote Procedure Calls).  This means that the plugin does not need to be compiled into the existing application or statically linked but can be integrated dynamically at runtime.  Other examples of this approach are [Pie](http://npf.io/2015/05/pie/), [Pingo](https://github.com/dullgiulio/pingo) and [Drone](https://github.com/drone/drone).  Pie and Drone are interesting because instead of using RPC over TCP/IP the communication with the plugin process occurs via stdin and stdout.  Drone even takes the separation between application and plugin further by having the plugin process running within its own discrete Docker container.  Some of the pros and cons of this approach are as follows:
 
 Pros:
 
