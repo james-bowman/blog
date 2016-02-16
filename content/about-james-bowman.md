@@ -39,5 +39,5 @@ All views expressed on this site are my own and do not necessarily represent tho
 <link itemprop="sameAs" href="https://plus.google.com/+JamesBowman1978" />
 <link itemprop="sameAs" href="https://www.facebook.com/james.bowman.52831" />
 <link itemprop="sameAs" href="https://github.com/james-bowman" />
-
+<link itemprop="sameAs" href="https://onename.com/jamesbowman" />
 </div>
