@@ -73,7 +73,7 @@ Typically these types of standards are defined across the organisation and can h
 
 ## In Conclusion
 
-There are benefits to both standardising and diversifying/customising and rather than adopting a one size fits all approach, consider each application individually.  However, be wary of approaching standardisation as a means of cutting costs - you may end up simply pushing the costs elsewhere.  In these cases, you might wish to consider building platforms to support diversity and customisation whilst still reducing time to market by leveraging a focused, common platform.  
+There are benefits to both standardising and diversifying/customising and rather than adopting a one size fits all approach, consider each application individually.  However, be wary of approaching standardisation as a means of cutting costs - you may end up simply pushing the costs elsewhere.  Where standardising is desired, you might wish to consider building platforms to support diversity and customisation whilst still reducing time to market by leveraging a focused, common platform.  
 
 Consider rolling out lightweight standards across the enterprise to promote consistency in the areas that consistency is important (e.g. application integration, security, user experience, etc.) helping to accelerate product development but be careful not to restrict teams' autonomy or ability to innovate.
 
