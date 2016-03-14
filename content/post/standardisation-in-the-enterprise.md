@@ -69,7 +69,7 @@ Earlier on, I mentioned that we would later be looking at other types of standar
 - Standards to ensure a high level of quality to limit our risk exposure and additional expenses
 - Standards that promote consistent user experience to optimise usability and profit
 
-Typically these types of standards are defined across the organisation and can help drive emergent behaviours.
+Typically these types of standards are defined across the organisation and can help drive emergent behaviours.  These types of standards explicitly define the small set of things that must be consistent (to support tooling, interoperability, etc.) and leave everything else to vary, allowing teams autonomy and freedom to innovate.
 
 ## In Conclusion
 
