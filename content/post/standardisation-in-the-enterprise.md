@@ -33,11 +33,11 @@ So it seems that both approaches (standardisation and customisation/diversificat
 
 Of course in reality, things are much more complicated.  Trying to reduce costs through standardisation often simply pushes the costs elsewhere.  For example, consider an organisation comprising 5 separate business units.  Each business unit does similar things but is discreet, perhaps because they are based in different territories or perhaps because they were formerly part of other companies that were acquired.  Each business unit have their own application(s) supporting their own processes, product sets and data structures.  As part of any attempt to consolidate the 5 software applications into one standardised application the organisation must either:
 
-1. Force all business units to adopt the same uniform, compromised and potentially sub-optimal, business processes, product sets and data structures.
+1. Force all business units to adopt the same uniform, and potentially sub-optimal, business processes, product sets and data structures that will be, by definition, a compromise.
 
 	___or___
 
-2. Deal with the complexity and costs of supporting the 5 divergent business processes, product sets and data structures within a single application
+2. Deal with the complexity and costs of supporting the 5 divergent business processes, product sets and data structures within a single application.
 
 Neither of these options is particular appealing and may ironically cause an increase in cost rather than the desired reduction.  Furthermore, any changes to the application for a particular business unit must now be funneled along with all the changes for the 4 other business units and their impact considered for all 5 business units.  This will result in higher costs and significantly increased lead times for changes.  
 
