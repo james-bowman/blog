@@ -10,7 +10,7 @@ image = "/post/standardisation_l_crop.jpg"
 
 +++
 
-In enterprises there is often a strong desire to standardise.  The reasoning is simple: if we are all doing things the same way, using the same technology, then we can simplify our operations, benefit from economies and make our people more fungible.  So by extension, not standardising means duplicated effort, resources and expenditure.  But are things really this clear cut?
+In enterprises there is often a strong desire to standardise.  The reasoning is simple: if we are all doing things the same way, using the same technology, then we can simplify our operations, benefit from economies of scale and make our people more fungible.  So by extension, not standardising means duplicated effort, resources and expenditure.  But are things really this clear cut?
 
 Perhaps we should begin by thinking about the meaning of the word standardisation and understanding the alternatives.  [Wikipedia defines standardisation](https://en.wikipedia.org/wiki/Standardization) as:
 
