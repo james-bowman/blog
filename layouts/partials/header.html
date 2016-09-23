@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +12,22 @@
     {{ with .Site.Params.twitter }}
 		<meta name="twitter:site" content="{{ . }}" />
 		<meta name="twitter:author" content="@{{ . }}" />
+        <meta name="twitter:creator" content="@{{ . }}" />
 	{{ end }}
     <meta name="twitter:title" content="{{ .Title }} &middot; {{ .Site.Title }}">
     <meta name="twitter:description" content="{{ if .IsNode }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ else }}{{ with .Description }}{{ . }}{{ end }}{{ end }}">
+    {{ if isset .Params "image" }}
+		<meta property="twitter:image" content="{{ .Params.image }}" />
+	{{ else }}
+		<meta property="twitter:image" content="{{ .Site.BaseURL }}selfportraitBW.jpg" />
+	{{ end }}
 
     <meta property="og:type" content="article">
+    {{ if isset .Params "image" }}
+		<meta property="og:image" content="{{ .Params.image }}" />
+	{{ else }}
+		<meta property="og:image" content="{{ .Site.BaseURL }}selfportraitBW.jpg" />
+	{{ end }}
     <meta property="og:title" content="{{ .Title }} &middot; {{ .Site.Title }}">
     <meta property="og:description" content="{{ if .IsNode }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ else }}{{ with .Description }}{{ . }}{{ end }}{{ end }}">
 	<meta property="og:url" content="{{ .Permalink }}">
