@@ -17,14 +17,14 @@
     <meta name="twitter:title" content="{{ .Title }} &middot; {{ .Site.Title }}">
     <meta name="twitter:description" content="{{ if .IsNode }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ else }}{{ with .Description }}{{ . }}{{ end }}{{ end }}">
     {{ if isset .Params "image" }}
-		<meta property="twitter:image" content="{{ .Params.image }}" />
+		<meta property="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.image }}" />
 	{{ else }}
 		<meta property="twitter:image" content="{{ .Site.BaseURL }}selfportraitBW.jpg" />
 	{{ end }}
 
     <meta property="og:type" content="article">
     {{ if isset .Params "image" }}
-		<meta property="og:image" content="{{ .Params.image }}" />
+		<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.image }}" />
 	{{ else }}
 		<meta property="og:image" content="{{ .Site.BaseURL }}selfportraitBW.jpg" />
 	{{ end }}
