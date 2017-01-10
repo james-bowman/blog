@@ -24,7 +24,7 @@ After downloading the Land Registry data and some [basic manipulation][code] in 
 	<img src="/post/southernrail/uk-house-prices-10-2016.png"" alt="UK House Prices 10/2016" class="pure-img">
 </a>
 
-We can see from the visualisation that the average house price in and around London is higher than other parts of Britan.  As Southern Rail extends into London it seems likely the average property price in the area served by Southern Rail will be higher than the national average.  For our analysis using the trend of house price movements over time is going to be more useful than absolute values.
+We can see from the visualisation that the average house price in and around London is higher than other parts of Britan.  As Southern Rail extends into London it seems likely the average property price in the area served by Southern Rail will be higher than the national average.  For our analysis, using the trend of house price movements over time will be more useful than absolute values.
 
 Now we have the property prices by area, we need a way of comparing the nationwide prices with those for the area served by Southern Rail.  We need to calculate the area served by Southern or, perhaps more simply, the local authorities which have train stations served by Southern Rail.  Hunting around the internet I struggled to find data on train routes or schedules until I stumbled across the data I needed on Wikipedia.  Unlike most other sources I found, Wikipedia lists the stations served by each train operating company, rather than just the stations they operate.  This is important, because Southern Rail trains serve a number of stations operated by London Underground and other operating companies.
 
