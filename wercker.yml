@@ -7,6 +7,8 @@ build:
         config: config.toml
 deploy:
   steps:
+    - install-packages:
+        packages: git ssh-client
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
         domain: www.jamesbowman.me
