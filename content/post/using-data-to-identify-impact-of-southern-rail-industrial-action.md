@@ -5,7 +5,7 @@ description = "Using open data on house prices from the UK Land Registry to anal
 draft = false
 tags = ["development", "data", "analytics", "r", "go", "csv", "scraping", "southern rail", "property prices"]
 title = "Using data to identify the impact of Southern Rail industrial action"
-image = "/post/southernrail/prices.png"
+image = "/post/southernrail/area-served-by-southern.png"
 
 +++
 
