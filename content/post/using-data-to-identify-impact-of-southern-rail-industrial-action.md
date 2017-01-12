@@ -1,9 +1,9 @@
 +++
 categories = ["Development"]
 date = "2017-01-10T15:17:18Z"
-description = "Using open data on house prices from the UK Land Registry to analyse impact of Southern Rail industrial action"
+description = "Using open data on house prices from the UK Land Registry to analyse impact of Southern Rail industrial action with R and Go"
 draft = false
-tags = ["development", "data", "analytics", "r", "go", "csv", "scraping", "southern rail", "property prices"]
+tags = ["development", "data", "analytics", "r", "go", "csv", "scraping", "heat maps", "visualisation", "southern rail", "property prices", "open data", "government", "land registry"]
 title = "Using data to identify the impact of Southern Rail industrial action"
 image = "/post/southernrail/area-served-by-southern.png"
 
@@ -56,6 +56,6 @@ It is clear that, as we predicted, the average price for the area served by Sout
 
 As with any results, they are open to interpretation and we must consider that this is only a single data point and a trend usually requires at least 3.  Furthermore, we could argue that although the dispute has been going on since around April time, it is still too soon to see any impact manifest in property transactions (as it is a trailing indicator and we only have house price data up until October).  This analysis assumes equal exposure to impact from train disruption across all local authorities but in practice, some local authorities will more deeply affected than others.  Considering census data on how people travel to work could be a future enhancement.  Additionally, people residing outside the Southern area, but who drive to Southern train stations to catch trains are not accounted for in this analysis.  Finally, and perhaps most importantly, we have identified a correlation and not necessarily a causation - any change observed in property prices is not necessarily as a direct result of the industrial action.
 
-Whilst it is still too early to draw any conclusions I have enjoyed working with the data and will be interested to see what happens in the coming months as more data becomes available.  The code used to process, cleanse, analyse and visualise the data is available on Github [here][code].  I hope you have found my experiences interesting, please share your own experiences or thoughts in the comments section below.
+Whilst it is perhaps still too early to draw conclusions, I have enjoyed working with the data and will be interested to see what happens in the coming months as more data becomes available.  The code used to process, cleanse, analyse and visualise the data is available on Github [here][code].  I hope you have found my experiences interesting, please share your own experiences or thoughts in the comments section below.
 
 [code]: https://github.com/james-bowman/southerntrains
