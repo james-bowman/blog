@@ -35,7 +35,7 @@ Docker packages applications and services as containers.  Much like the shipping
 
 Containers provide applications with isolated execution contexts meaning applications running on the same host do not need to be aware of each other.  For example, it is possible to run several containerised web applications on the same host all listening on port 80.  Docker can then take care of how these ports are exposed to the outside world by mapping each one to a different port on the host machine.  Similarly, as each container packages all of the application's dependencies and provides separation, it is possible to have applications with different and potentially conflicting dependecies (e.g. library versions, application servers, virtual machines, operating system flavours, versions or patches) running side by side on the same host machine.
 
- 
+  
 
 Docker uses aspects of the Linux kernel to provide separation between containers.  For this reason, it only runs on Linux hosts or a Linux virtual machine.  Fortunately, the folks at Docker have provided an installation for Windows and Mac OSX that comes bundled with a Linux VM specifically for hosting Docker.
 

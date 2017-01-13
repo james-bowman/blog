@@ -33,7 +33,7 @@ If that is true for one X, is it true for all X? <br>
 Why do you say that? <br>
 How do you know? <br>
 What data is there to support this?
-Why? <br>
+Why? <br> 
 
 #### 4. Considering alternative viewpoints and perspectives
 Are there any alternatives? <br>
