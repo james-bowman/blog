@@ -1,66 +1,123 @@
 {{ partial "header.html" . }}
 
-<div id="layout" class="pure-g">
-    {{ partial "sidebar.html" . }}
+{{if .Site.Params.cover}}
+{{if or (eq (substr .Site.Params.cover 0 7) "http://") (eq (substr .Site.Params.cover 0 8) "https://")}}
+  <header class="main-header" style="background-image: url({{.Site.Params.cover}})">
+  {{ else }}
+  <header class="main-header" style="background-image: url({{.Site.BaseURL}}{{.Site.Params.cover}})">
+  {{ end }}
+{{else}}
+<header class="main-header no-cover">
+{{end}}
 
-    <div class="content pure-u-1 pure-u-md-3-4" itemscope itemtype="http://schema.org/Blog">
-		<meta itemprop="name" content="{{ .Site.Title }}" />
-		<meta itemprop="description" content="{{ .Site.Params.description }}" />
-		<link itemprop="url" href="{{ .Site.BaseURL }}" />
-		<div itemprop="about" itemscope itemtype="http://schema.org/Thing">
-			<meta itemprop="description" content="{{ .Site.Params.description }}" />
-		</div>
-		<div itemprop="author" itemscope itemtype="http://schema.org/Person">
-			<link itemprop="url" href="{{ .Site.BaseURL}}about/" />
-		</div>
-	
-        <div>
-            <!-- A wrapper for all the blog posts -->
-            <div class="posts">
-				{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-				<div>
-                {{ range .Paginator.Pages }}
-                <section class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-					<meta itemprop="datePublished" content='{{ .Date.Format "2006-01-02T15:04Z" }}'/>	
-					<h2 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h2>
-                    <header class="post-header">
+    <nav class="main-nav overlay clearfix">
+        {{ if .Site.Params.logo }}
+            <a class="blog-logo" href="{{ .Permalink }}"><img src="{{.Site.BaseURL}}{{ .Site.Params.logo }}" alt="Blog Logo" /></a>
+        {{end}}
+        {{ if .Site.Menus.main }}
+            <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+        {{else}}
+            {{ if .Site.Params.RSSLink}}
+              <a class="menu-button icon-feed" href="{{.Site.Params.RSSLink }}">&nbsp;&nbsp;Subscribe</a>
+            {{else}}
+              <a class="menu-button icon-feed" href="{{ .RSSLink }}">&nbsp;&nbsp;Subscribe</a>
+            {{end}}
+        {{end}}
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            {{ if .Site.Params.linkedinName }}
+                <a class="bloglogo" href="https://www.linkedin.com/in/{{ .Site.Params.linkedinName }}" target="_blank">
+                    <span class="icon-linkedin" style="color:white;font-size:2em"></span>
+                </a>
+            &nbsp;
+            {{end}}
+            {{ if .Site.Params.githubName }}
+                <a class="bloglogo" href="https://github.com/{{ .Site.Params.githubName }}" target="_blank">
+                <span class="icon-github" style="color:white;font-size:2em"></span>
+                </a>
+            &nbsp;
+            {{end}}
+            {{ if .Site.Params.twitterName }}
+                <a class="bloglogo" href="https://twitter.com/{{ .Site.Params.twitterName }}" target="_blank">
+                    <span class="icon-twitter" style="color:white;font-size:2em"></span>
+                </a>
+            &nbsp;
+            {{end}}
+            {{ if .Site.Params.facebookName }}
+                <a class="bloglogo" href="https://www.facebook.com/{{ .Site.Params.facebookName }}" target="_blank">
+                    <span class="icon-facebook" style="color:white;font-size:2em"></span>
+                </a>
+            &nbsp;
+            {{end}}
+            {{ if .Site.Params.instagramName }}
+                <a class="bloglogo" href="https://instagram.com/{{ .Site.Params.instagramName }}" target="_blank">
+                    <span class="icon-instagram" style="color:white;font-size:2em"></span>
+                </a>
+            &nbsp;
+            {{end}}
+            {{ if .Site.Params.pinterestName }}
+                <a class="bloglogo" href="https://www.pinterest.com/{{ .Site.Params.pinterestName }}" target="_blank">
+                    <span class="icon-pinterest" style="color:white;font-size:2em"></span>
+                </a>
+            &nbsp;
+            {{end}}
+            {{ if .Site.Params.googlePlusName }}
+                <a class="bloglogo" href="https://google.com/+{{ .Site.Params.googlePlusName }}" target="_blank">
+                    <span class="icon-google-plus" style="color:white;font-size:2em"></span>
+                </a>
+            &nbsp;
+            {{end}}
 
-						{{ if isset .Params "image" }}
-							<link itemprop="image" href="{{ .Params.image }}" />
-						{{ else }}
-							<link itemprop="image" href="/selfportraitBW.jpg" />
-						{{ end }}
-
-                        <a itemprop="url" href="{{ .Permalink }}" class="post-title"><span itemprop="headline"><span itemprop="name">{{ .Title }}</span></span></a>
-
-                        <p class="post-meta">
-                            {{ with .Params.author }}
-                                By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><strong itemprop="name" class="post-author">{{ . }}</strong></span>
-                            {{ end }}
-                            {{ if isset .Params "categories" }}
-                                under 
-                                {{ $baseUrl := .Site.BaseURL }}
-                                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}"><span itemprop="articleSection">{{ . }}</span></a>{{ end }}
-                            {{ end }}
-                        </p>
-                    </header>
-
-                    <!--<div class="post-description">-->
-					<div class="summary" itemprop="description">
-                        {{ .Summary }}{{ if .Truncated }}...{{ end }}
-                    </div>
-					{{ if .Truncated }}
-  					<div class="read-more-link">
-  						<a href="{{ .Permalink }}">Read More &rarr;</a>
-  					</div>
-  					{{ end }}
-                </section>
-                {{ end }}
-            </div>
-            {{ partial "pagination.html" . }}
-            {{ partial "footer.html" . }}
+            <h1 class="page-title">{{ .Site.Title }}</h1>
+            <h2 class="page-description">{{ .Site.Params.description }}</h2>
         </div>
     </div>
-</div>
-</body>
-</html>
+    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+</header>
+
+
+<main id="content" class="content" role="main">
+
+    {{ range .Data.Pages }}
+        {{if eq .Type "index" }}
+        <div class="index-content post">
+        {{.Content}}
+        </div>
+        {{end}}
+    {{ end }}
+
+    {{ if not ($.Scratch.Get "paginatedSections") }}
+        {{ if isset .Site.Params "paginatedSections" }}
+            {{ $.Scratch.Set "paginatedSections" .Site.Params.paginatedSections }}
+        {{ else }}
+            {{ $.Scratch.Set "paginatedSections" "post" }}
+        {{ end }}
+    {{ end }}
+
+    {{ $list := where .Data.Pages "Section" "in" ($.Scratch.Get "paginatedSections") }}
+    {{ $list := where $list "Section" "!=" "" }}
+    {{ $paginator := .Paginate ( $list ) }}
+
+    <div class="extra-pagination inner">
+        {{ partial "pagination.html" $paginator }}
+    </div>
+
+    {{ range $index, $page := $paginator.Pages }}
+        {{ partial "li.html" . }}
+    {{ end }}
+
+    {{ partial "pagination.html" $paginator }}
+
+    {{ if .Site.Params.coverAttribution.imageURL }}
+    <div class="index-content post">
+        <div class="post-meta">
+            <sub>
+        Cover photo: <a href="{{ .Site.Params.coverAttribution.imageURL }}">{{ .Site.Params.coverAttribution.imageTitle }}</a> by {{ .Site.Params.coverAttribution.Author }}{{ if .Site.Params.coverAttribution.licenceURL }}, available under a <a href="{{ .Site.Params.coverAttribution.licenceURL }}">{{ .Site.Params.coverAttribution.licenceName }}</a>{{end}}
+            </sub>
+        </div>
+    </div>
+    {{end}}
+</main>
+
+{{ partial "footer.html" . }}

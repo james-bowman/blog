@@ -3,7 +3,7 @@ build:
   steps:
     - arjen/hugo-build:
         version: 0.14
-        theme: purehugo
+        theme: mycasper
         config: config.toml
 deploy:
   steps:

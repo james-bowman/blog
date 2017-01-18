@@ -1,0 +1,51 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "{{ .Site.Params.authorname }}",
+  {{ with .Site.Params.logo }}
+  "logo": {{ printf "%s%s" $.Site.BaseURL . }},
+  "image": {
+      "@type": "ImageObject",
+      "url": {{ printf "%s%s" $.Site.BaseURL . }},
+      "width": 250,
+      "height": 250
+    }, 
+{{end}}
+  "givenName": "James",
+  "additionalName": "Edward",
+  "familyName": "Bowman",
+  "jobTitle": "Chief Architect",
+  "affiliation": "Markel International",
+  "worksFor": {
+      "@type": "Organisation",
+      "name": "Markel International",
+      "url": "http://www.markelinternational.com"
+  }, 
+  {{ with .Site.Params.bio }}
+  "description": "{{ . }}",
+  {{end}}
+  "url": {{ .Site.BaseURL }},
+  "sameAs": [
+      "https://onename.com/jamesbowman",
+{{ $socialLinks := (slice .Site.Params.googlePlus .Site.Params.github .Site.Params.facebook .Site.Params.linkedin .Site.Params.twitter) }}
+            {{ $len := (sub (len $socialLinks) 1)}}
+            {{ range $index, $el := $socialLinks }} {{ if $el }}{{ $el }}{{ if (lt $index $len) }},{{end}}{{end}}
+            {{ end }}
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Horsham",
+    "addressRegion": "West Sussex",
+    "addressCountry": {
+        "@type": "Country",
+        "name": "UK"
+    }
+  },
+  "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ .Permalink }}
+    }
+}
+</script>
+    

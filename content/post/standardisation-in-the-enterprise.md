@@ -7,6 +7,11 @@ tags = ["devops", "development", "enterprise architecture", "architecture", "sta
 title = "Standardisation in the Enterprise"
 author = "James Bowman"
 image = "/post/standardisation_l_crop.jpg"
+imageURL = "https://www.flickr.com/photos/togawanderings/14212266277/in/album-72157645145946024/"
+imageTitle = "Examination"
+imageCreator = "Thomas Galvez"
+imageLicenceURL = "https://creativecommons.org/licenses/by/2.0/"
+imageLicenceName = "Creative Commons Attribution-Noncommercial license"
 
 +++
 
@@ -17,11 +22,6 @@ Perhaps we should begin by thinking about the meaning of the word standardisatio
 >Standardization or standardisation is the process of implementing and developing technical standards. Standardization can help to maximize compatibility, interoperability, safety, repeatability, or quality. It can also facilitate commoditization of formerly custom processes. 
 
 As an interesting aside, there is no mention of _uniformity_ in this definition even though the two terms are frequently used synonomously in many enterprises.  Standardisation is often interpreted as application standardisation - normalising and consolidating to uniform, and often centralised, applications and tools.  However, it is important to note there are other types of standards beyond applications - more on these later.
-
-<a href="/post/standardisation_l_crop.jpg">
-	<img src="/post/standardisation_l_crop.jpg" alt="Standardisation" class="pure-img">
-</a>
-<sup><sub>image: Crop of [Examination](https://www.flickr.com/photos/togawanderings/14212266277/in/album-72157645145946024/) by Thomas Galvez, available under a [Creative Commons Attribution-Noncommercial license][1].</sub></sup>
 
 Most Thesaurus' would say the opposite of the word standardisation is _deviation_ which conjours up all sorts of negative conotations.  I would argue that more accurate words to describe the opposite of standardisation, in this context, are _diversification_ and _customisation_.  And, unlike _deviation_, it turns out there are many benefits to diversification and customisation:
 

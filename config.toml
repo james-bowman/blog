@@ -1,7 +1,8 @@
 baseurl = "http://www.jamesbowman.me/"
-languageCode = "en-us"
+languageCode = "en-gb"
 title = "James Bowman"
-copyright = "James Bowman"
+paginate = 5
+copyright = "All rights reserved 2017"
 disqusShortname = "jamesebowman"
 
 [author]
@@ -9,26 +10,56 @@ disqusShortname = "jamesebowman"
   email = "james.edward.bowman@gmail.com"
 
 [params]
+  #cover = "IMG_20141208_153539.jpg"
+  #cover = "2081043813_7c707fd18a_o.jpg"
+  cover = "2081043813_78e99f9269_b_edit.jpg"
   description = "Software development, DevOps and coaching"
+  bio = "I love coding in Go, microservices, continuous delivery and DevOps. I am fascinated by coaching, learning, people's behaviour and organisational change."
   author = "James Bowman"
+  authorlocation = "London, UK"
+  authorwebsite = "http://www.jamesbowman.me"
   authorname = "James Bowman"
-  twitter = "jamesebowman"
+  logo = "selfportraitBWcirc.png"
   googleplus = "https://plus.google.com/+JamesBowman1978"
+  twitter = "https://twitter.com/JameseBowman"
   twitter_user = "jamesebowman"
+  twitterName = "jamesebowman"
   github = "https://github.com/james-bowman"
   github_user = "james-bowman"
+  githubName = "james-bowman"
   linkedin = "https://uk.linkedin.com/in/jamesedwardbowman"
   linkedin_user = "jamesedwardbowman"
+  linkedinName = "jamesedwardbowman"
   disqus = "jamesebowman"
   google_analytics = "UA-64894312-1"
-
   facebook_like = true
   twitter_tweet_button = true
   google_plus_one = "true"
-  
   disqus_short_name = "jamesebowman"
   disqus_show_comment_count = "true"
+  RSSLink = "http://feeds.jamesbowman.me/jamesbowman/blog"
 
-  banner = true
-  twitter_tweet_count = 5
-  twitter_show_replies = true
+[params.coverAttribution]
+  imageURL = "https://www.flickr.com/photos/thomaschristensen/2081043813/in/photostream/"
+  imageTitle = "Working Late"
+  author = "Thomas Høyrup Christensen"
+  licenceURL = "https://creativecommons.org/licenses/by-nc-sa/2.0/"
+  licenceName = "Attribution-Noncommercial-Share Alike 2.0 license"
+
+[[menu.main]]
+  name = "Blog"
+  weight = -120
+  identifier = "blog"
+  url = "/"
+
+[[menu.main]]
+  name = "Archive"
+  weight = -110
+  identifier = "archive"
+  url = "/post"
+
+[[menu.main]]
+  name = "About me"
+  weight = -100
+  identifier = "about"
+  url = "/about-james-bowman"
