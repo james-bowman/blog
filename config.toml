@@ -31,13 +31,14 @@ disqusShortname = "jamesebowman"
   linkedin_user = "jamesedwardbowman"
   linkedinName = "jamesedwardbowman"
   disqus = "jamesebowman"
-  google_analytics = "UA-64894312-1"
+  #google_analytics = "UA-64894312-1"
   facebook_like = true
   twitter_tweet_button = true
   google_plus_one = "true"
   disqus_short_name = "jamesebowman"
   disqus_show_comment_count = "true"
   RSSLink = "http://feeds.jamesbowman.me/jamesbowman/blog"
+  customHeaderPartial = "customHeader.html"
 
 [params.coverAttribution]
   imageURL = "https://www.flickr.com/photos/thomaschristensen/2081043813/in/photostream/"
