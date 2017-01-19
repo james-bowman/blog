@@ -2,9 +2,8 @@
 {
   "@context": "http://schema.org",
   "@type": "Person",
-  "name": "{{ .Site.Params.authorname }}",
+  "name": {{ .Site.Params.authorname }},
   {{ with .Site.Params.logo }}
-  "logo": {{ printf "%s%s" $.Site.BaseURL . }},
   "image": {
       "@type": "ImageObject",
       "url": {{ printf "%s%s" $.Site.BaseURL . }},
@@ -23,7 +22,7 @@
       "url": "http://www.markelinternational.com"
   }, 
   {{ with .Site.Params.bio }}
-  "description": "{{ . }}",
+  "description": {{ . }},
   {{end}}
   "url": {{ .Site.BaseURL }},
   "sameAs": [
