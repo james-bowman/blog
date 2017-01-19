@@ -5,14 +5,9 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "publisher": {
-        "@type": "Person",
+        "@type": "Organization",
         "name": {{ .Site.Params.authorname }}{{ with .Site.Params.logo }},
-         "image": {
-            "@type": "ImageObject",
-            "url": {{ printf "%s%s" $.Site.BaseURL . }},
-            "width": 250,
-            "height": 250
-        }{{end}}
+        "logo": {{ printf "%s%s" $.Site.BaseURL . }}{{end}}
     },
     "author": {
         "@type": "Person",
