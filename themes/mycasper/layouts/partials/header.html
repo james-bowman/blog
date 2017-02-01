@@ -25,9 +25,7 @@
     <meta property="og:description" content="{{ .Site.Params.description }}" />
     {{ end }}
 
-    <title>
-      {{ if ne .URL "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}
-    </title>
+    <title>{{ if ne .URL "/" }} {{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
 
     {{ if .IsPage }}
     <meta name="description" content="{{ .Description }}" />
