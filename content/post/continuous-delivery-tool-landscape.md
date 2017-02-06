@@ -9,7 +9,7 @@ image = "/post/cdlandscape/ContinuousDeliveryToolLandscape.jpeg"
 #image = "/post/cdlandscape/P1060052_edited-1.jpg"
 +++
 
-I have been having a lot of discussions recently about DevOps and Continuous Delivery.  There seems to be a lot of confusion regarding what these terms really mean.  Is there more to DevOps than automation, and more specifically automated deployments?  What is the difference between Continous Delivery, Continuous Integration and even Continuous Deployment.
+I have been having a lot of discussions recently about DevOps and Continuous Delivery.  There seems to be a lot of confusion regarding what these terms really mean.  Is there more to DevOps than automation, and more specifically automated deployments?  What is the difference between Continous Delivery, Continuous Integration and even Continuous Deployment?
 
 There are of course many definitions available on the internet but I find it useful to think of DevOps as a culture of collaboration and continuous improvement facilitating optimisation of the value stream.  Continuous Delivery is an approach allowing developed software to be deployed at any time aiming for faster and more frequent deployments. Both are mutually compatible and usually go hand in hand.
 
@@ -21,11 +21,11 @@ You can see the complete visualisation here:
 	<img src="/post/cdlandscape/ContinuousDeliveryToolLandscape.jpeg" alt="Continuous delivery tool landscape Jan 2017">
 </a>
 
-I divided the landscape up into 5 high-level phases broadly aligned to a generic application lifecycle: Collaborate, Build, Test, Deploy and Run.  Within each stage, I then attempted to categorise the types of tools available.  Some tools within the same category address slightly different problems and can be considered complimentary to one another e.g. Terraform and Puppet/Chef.  Conversely, some of the tools e.g. MS Team Foundation Server, Go CD, Docker, etc. could appear in multiple categories.  Where this is the case, I have tried to place them once, in the primary category for which they are known.  
+I divided the landscape up into 5 high-level phases broadly aligned to a generic application lifecycle: Collaborate, Build, Test, Deploy and Run.  Within each phase, I then attempted to categorise the types of tools available.  Some tools within the same category address slightly different problems and can be considered complimentary to one another e.g. Terraform and Puppet/Chef.  Conversely, some of the tools e.g. MS Team Foundation Server, Go CD, Docker, etc. could appear in multiple categories.  Where this is the case, I have tried to place them once, in the primary category for which they are known.  
 
 ## What is not covered
 
-Whilst it would be great to show the entire landscape some compromises had to be made and so some categories of tools were omitted.  These include:
+Whilst it would be great to show the entire landscape on one page some compromises had to be made and so some categories of tools were omitted.  These include:
 
 - Service Discovery and global Configuration stores e.g. Consul, ZooKeeper, etcd, etc.
 - Security management and monitoring tools (Privileged Account Management, intrusion detection, secret management and certificate management) e.g. CyberArk, Snort, Tripwire, Fortify, Vault, Let’s Encrypt, etc.
