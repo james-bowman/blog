@@ -15,11 +15,11 @@ imageLicenceURL = "https://creativecommons.org/licenses/by-nc-sa/2.0/"
 imageLicenceName = "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic license"
 +++
 
-I have been having a lot of discussions recently about DevOps and Continuous Delivery.  There seems to be a lot of confusion regarding what these terms really mean.  Is there more to DevOps than automation, and more specifically, automated deployments?  What is the difference between Continous Delivery, Continuous Integration and even Continuous Deployment?
+I have been having a lot of discussions recently about DevOps and Continuous Delivery.  There seems to be a lot of confusion regarding what these terms really mean.  Is there more to DevOps than automation, and more specifically, automated deployments?  What is the difference between Continous Delivery and Continuous Integration?
 
 There are of course many definitions available on the internet but I find it useful to think of DevOps as a culture of collaboration and continuous improvement facilitating optimisation of the value stream.  Continuous Delivery is an approach allowing developed software to be deployed at any time aiming for faster and more frequent deployments. Both are mutually compatible and usually go hand in hand.
 
-Unfortunately, trying to have a conversation about fuzzy and nebulous things like culture and principles whilst people are looking at tools doesn't feel particularly helpful.  However, without considering the broader context, the different tools available and the roles they perform, it is likely an inappropriate tool may be selected. With this in mind, I thought it might be useful to visualise the broader CD/DevOps tool landscape and ecosystem to provide some, more concrete, context around the tool(s) being immediately explored and the specific problems each one seeks to address.  
+Unfortunately, trying to have a conversation about fuzzy and nebulous things like culture and approaches whilst people are looking at tools doesn't feel particularly helpful.  However, without considering the broader context, the different tools available and the roles they perform, it is likely an inappropriate tool may be selected. With this in mind, I thought it might be useful to visualise the broader CD/DevOps tool landscape to provide some, more concrete, context around the available tool(s), the specific problems they aim to address and where they fit within the broader ecosystem.  
 
 You can see the complete visualisation here: 
 
