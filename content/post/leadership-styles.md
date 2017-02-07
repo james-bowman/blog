@@ -6,7 +6,7 @@ draft = false
 tags = ["coaching", "leadership", "development", "influencing", "maturity", "critical thinking"]
 title = "Leadership styles"
 author = "James Bowman"
-image = "/post/Coaching Spectrum.001.jpg"
+image = "/post/CoachingSpectrum.jpg"
 
 +++
 
@@ -20,8 +20,8 @@ The idea of maturity as an evolutionary progression is not uncommon and is centr
 
 Leadership and teaching styles can be broadly categorised into two types: directive and non-directive.  With directive styles, the leader is typically the person who defines the solution and then tells the team or individual what to do.  With non-directive styles, the leader helps the team or individual arrive at the solution themselves usually by asking guiding questions.  Directive and non-directive styles are often referred to as "Push" and "Pull" respectively to reflect the nature of the influence and where the solution is coming from.  The diagram below is based upon one by [Myles Downey](http://mylesdowney.com/) and shows a spectrum of coaching skills and how they are typically associated with push or pull styles.  
 
-<a href="/post/Coaching Spectrum.001.jpg">
-	<img src="/post/Coaching Spectrum.001.jpg" alt="A spectrum of coaching skills supporting Push (directive) to pull (non-directive) influencing styles" class="pure-img">
+<a href="/post/CoachingSpectrum.jpg">
+	<img src="/post/CoachingSpectrum.jpg" alt="A spectrum of coaching skills supporting Push (directive) to pull (non-directive) influencing styles" class="pure-img">
 </a>
 <sup><sub>image: based upon [Myles Downey's Spectrum of Coaching Skills][1]</sub></sup>
 

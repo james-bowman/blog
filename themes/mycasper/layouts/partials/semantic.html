@@ -41,13 +41,21 @@
     "url": {{ .Permalink }},
     "datePublished": {{ .Date.Format "2006-01-02T15:04Z" }},
     "dateModified": {{ .Lastmod.Format "2006-01-02T15:04Z" }},
-    {{ with .Params.image }}
+    {{ with .Params.socialimage }}
     "image": {
         "@type": "ImageObject",
         "url": {{ printf "%s%s" $.Site.BaseURL . }},
         "width": 3000,
         "height": 1445
     },
+    {{else}}{{ with .Params.image }}
+    "image": {
+        "@type": "ImageObject",
+        "url": {{ printf "%s%s" $.Site.BaseURL . }},
+        "width": 3000,
+        "height": 1445
+    },
+    {{end}}
     {{end}}
     "keywords": {{ delimit .Params.tags ", " }},
     "description": {{ .Description }},

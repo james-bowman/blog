@@ -5,11 +5,17 @@ tags = ["cd","devops","development","tools"]
 draft = true
 description = "An overview of some of the tools supporting continuous delivery and devops practices"
 date = "2017-01-30T08:34:52Z"
-image = "/post/cdlandscape/ContinuousDeliveryToolLandscape.jpeg"
+socialimage = "/post/cdlandscape/ContinuousDeliveryToolLandscape.jpeg"
 #image = "/post/cdlandscape/P1060052_edited-1.jpg"
+image = "/post/cdlandscape/5666226557_fd58e28368_b.jpg"
+imageURL = "https://www.flickr.com/photos/thelearningcurvedotca/5666226557/in/photolist-9CGTKk-4Btkot-4Btktr-87uhSr-8osTy-9svYGE-8j2FPs-4fVeMf-Fppkv-oW9WhF-nFnDEA-4d52wB-cXs2n-k5ZFc-6Snb1-niC99x-6aRnQN-3rThWk-qs68e8-6dFaYQ-5jsdCA-9tmFyT-3acUTk-7ATuoW-gGoJ4j-4BxBSC-cn8Mu-4BxBDu-4h4FfJ-8VpcTK-5wmsZ-3K2DPi-4FEQ1Q-MDu7-6989qm-4pxcPw-KWqRy-4o8YT-iWheoe-4aa7tW-9QkrJh-3Y98RR-5xF9ff-cWwCRo-dj5KU8-nXdRv-jH6mq5-gxRP1f-w46E-4cdkAS"
+imageTitle = "Speed"
+imageCreator = "Brian Carson"
+imageLicenceURL = "https://creativecommons.org/licenses/by-nc-sa/2.0/"
+imageLicenceName = "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic license"
 +++
 
-I have been having a lot of discussions recently about DevOps and Continuous Delivery.  There seems to be a lot of confusion regarding what these terms really mean.  Is there more to DevOps than automation, and more specifically automated deployments?  What is the difference between Continous Delivery, Continuous Integration and even Continuous Deployment?
+I have been having a lot of discussions recently about DevOps and Continuous Delivery.  There seems to be a lot of confusion regarding what these terms really mean.  Is there more to DevOps than automation, and more specifically, automated deployments?  What is the difference between Continous Delivery, Continuous Integration and even Continuous Deployment?
 
 There are of course many definitions available on the internet but I find it useful to think of DevOps as a culture of collaboration and continuous improvement facilitating optimisation of the value stream.  Continuous Delivery is an approach allowing developed software to be deployed at any time aiming for faster and more frequent deployments. Both are mutually compatible and usually go hand in hand.
 
@@ -39,4 +45,4 @@ Whilst it would be great to show the entire landscape on one page some compromis
 
 ## Wrap up
 
-The visualisation is not intended to be exhaustive or represent any form of recommendation or endorsement.  That said, it would be interesting to hear other people's perspectives and experiences.  Have you used other tools that belong in this visualisation?  Does the visualisation resonate with your own experiences and have you used some of the tools shown?  Are there any categories you feel missing?  If so, please comment and share your thoughts and experiences. 
+The visualisation is not intended to be exhaustive or represent any form of recommendation or endorsement.  It would be interesting to hear other people's perspectives and experiences.  Have you used other tools that belong in this visualisation?  Does the visualisation resonate with your own experiences and have you used some of the tools shown?  Are there any categories you feel missing?  If so, please comment and share your thoughts and experiences. 
