@@ -2,7 +2,7 @@
 title = "Continuous delivery tool landscape"
 categories = ["DevOps","Development"]
 tags = ["cd","devops","development","tools"]
-draft = true
+draft = false
 description = "An overview of the tools supporting CD (Continuous Delivery) and devops practices in 2017"
 date = "2017-01-30T08:34:52Z"
 socialimage = "/post/cdlandscape/ContinuousDeliveryToolLandscape.jpeg"
