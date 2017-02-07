@@ -11,7 +11,7 @@ imageURL = "https://www.flickr.com/photos/emagic/56206868/"
 imageTitle = "good question"
 imageCreator = "Eric"
 imageLicenceURL = "https://creativecommons.org/licenses/by-nd/2.0/"
-imageLicenceName = "Creative Commons Attribution-NoDerivs 2.0 Generic license
+imageLicenceName = "Creative Commons Attribution-NoDerivs 2.0 Generic license"
 
 +++
 
