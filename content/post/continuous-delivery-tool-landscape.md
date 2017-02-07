@@ -3,7 +3,7 @@ title = "Continuous delivery tool landscape"
 categories = ["DevOps","Development"]
 tags = ["cd","devops","development","tools"]
 draft = true
-description = "An overview of some of the tools supporting continuous delivery and devops practices"
+description = "An overview of the tools supporting CD (Continuous Delivery) and devops practices in 2017"
 date = "2017-01-30T08:34:52Z"
 socialimage = "/post/cdlandscape/ContinuousDeliveryToolLandscape.jpeg"
 #image = "/post/cdlandscape/P1060052_edited-1.jpg"
@@ -15,11 +15,9 @@ imageLicenceURL = "https://creativecommons.org/licenses/by-nc-sa/2.0/"
 imageLicenceName = "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic license"
 +++
 
-I have been having a lot of discussions recently about DevOps and Continuous Delivery.  There seems to be a lot of confusion regarding what these terms really mean.  Is there more to DevOps than automation, and more specifically, automated deployments?  What is the difference between Continous Delivery and Continuous Integration?
+I have been having a lot of discussions recently about tooling to support continuous delivery and DevOps practices.  There is an incredible and ever increasing array of tools available for these practices.  Whilst a number of vendors have developed [one-stop solutions or suites of integrated tools](https://dzone.com/articles/continuous-delivery-anti-patterns), many of the tools in the space tend to be tightly focused on addressing a particular problem.  
 
-There are of course many definitions available on the internet but I find it useful to think of DevOps as a culture of collaboration and continuous improvement facilitating optimisation of the value stream.  Continuous Delivery is an approach allowing developed software to be deployed at any time aiming for faster and more frequent deployments. Both are mutually compatible and usually go hand in hand.
-
-Unfortunately, trying to have a conversation about fuzzy and nebulous things like culture and approaches whilst people are looking at tools doesn't feel particularly helpful.  However, without considering the broader context, the different tools available and the roles they perform, it is likely an inappropriate tool may be selected. With this in mind, I thought it might be useful to visualise the broader CD/DevOps tool landscape to provide some, more concrete, context around the available tool(s), the specific problems they aim to address and where they fit within the broader ecosystem.  
+Unfortunatley this can be confusing and overwhelming, especially to people starting out, making it difficult to know where to start and which tools to consider.  This can also lead to particular tools being used to solve problems where other types of tools may be better suited.  It is therefore important to consider tools within the context of the broader ecosystem and understand the role each one plays and the specific goal or problem(s) they aim to address.  With this in mind, I thought it might be useful to visualise the broader CD/DevOps tool landscape to provide some context around the available tools and how they each fit within it.  
 
 You can see the complete visualisation here: 
 
