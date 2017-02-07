@@ -6,6 +6,12 @@ draft = false
 tags = ["coaching", "leadership", "development", "influencing", "psychology", "critical thinking"]
 title = "Socratic questions"
 author = "James Bowman"
+image = "/post/socraticQuestions.jpg"
+imageURL = "https://www.flickr.com/photos/emagic/56206868/"
+imageTitle = "good question"
+imageCreator = "Eric"
+imageLicenceURL = "https://creativecommons.org/licenses/by-nd/2.0/"
+imageLicenceName = "Creative Commons Attribution-NoDerivs 2.0 Generic license
 
 +++
 
