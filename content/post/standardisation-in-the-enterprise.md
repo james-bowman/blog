@@ -44,9 +44,6 @@ For example, consider an organisation comprising 5 separate business units.  Eac
 
 Neither of these options is particular appealing and may ironically cause an increase in cost rather than the desired reduction.  Furthermore, any changes to the application for a particular business unit must now be funneled along with all the changes for the 4 other business units and their impact considered for all 5 business units.  This will result in higher costs and significantly increased lead times for changes.  
 
-
-<a href=”http://twitter.com/home?status=Trying to reduce costs through standardisation often simply pushes the costs elsewhere. http://jamesbowman.me/standardisation-in-the-enterprise @jamesebowman”>Tweet this</a>
-
 This phenomonon is often explained using an adage called [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law).  It states that:
 
 >Any organisation that designs a system (defined more broadly here than just information systems) will inevitably produce a design whose structure is a copy of the organization's communication structure.
