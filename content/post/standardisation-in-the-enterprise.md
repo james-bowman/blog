@@ -29,9 +29,12 @@ Most Thesaurus' would say the opposite of the word standardisation is _deviation
 - **Increased responsiveness and agility** - greater autonomy with fewer dependencies and lower impact of change
 - **Potentially increased productivity and/or revenue** - tailoring of experience, applications, practices and processes to best suit territories, teams and customers involved
 
-So it seems that both approaches (standardisation and customisation/diversification) have their own, albeit different, sets of benefits and drivers.  Standardisation is often bourne out of attempts to optimise the bottom line (costs) where as diversification and customisation tend to come about when optimising the top line (revenue).  
+So it seems that both approaches (standardisation and customisation/diversification) have their own, albeit different, sets of benefits and drivers.  Standardisation is often bourne out of attempts to optimise the bottom line (costs) where as diversification and customisation tend to come about when optimising the top line (revenue).  Of course in reality, things are much more complicated.  
 
-Of course in reality, things are much more complicated.  Trying to reduce costs through standardisation often simply pushes the costs elsewhere.  For example, consider an organisation comprising 5 separate business units.  Each business unit does similar things but is discreet, perhaps because they are based in different territories or perhaps because they were formerly part of other companies that were acquired.  Each business unit have their own application(s) supporting their own processes, product sets and data structures.  As part of any attempt to consolidate the 5 software applications into one standardised application the organisation must either:
+><p>**Trying to reduce costs through standardisation often simply pushes the costs elsewhere.**</p>
+<a class="bloglogo" href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Trying%20to%20reduce%20costs%20through%20standardisation%20often%20simply%20pushes%20the%20costs%20elsewhere%20by%20%40jamesbowman%20http%3A%2F%2Fjamesbowman.me%2Fpost%2Fstandardisation-in-the-enterprise', '_blank', 'width=500,height=500'); return false;"><span class="icon-twitter" style="color:#00aced;font-size:1em"> Click to Tweet</span></a>
+
+For example, consider an organisation comprising 5 separate business units.  Each business unit does similar things but is discreet, perhaps because they are based in different territories or perhaps because they were formerly part of other companies that were acquired.  Each business unit have their own application(s) supporting their own processes, product sets and data structures.  As part of any attempt to consolidate the 5 software applications into one standardised application the organisation must either:
 
 1. Force all business units to adopt the same uniform, and potentially sub-optimal, business processes, product sets and data structures that will be, by definition, a compromise.
 
@@ -40,6 +43,9 @@ Of course in reality, things are much more complicated.  Trying to reduce costs 
 2. Deal with the complexity and costs of supporting the 5 divergent business processes, product sets and data structures within a single application.
 
 Neither of these options is particular appealing and may ironically cause an increase in cost rather than the desired reduction.  Furthermore, any changes to the application for a particular business unit must now be funneled along with all the changes for the 4 other business units and their impact considered for all 5 business units.  This will result in higher costs and significantly increased lead times for changes.  
+
+
+<a href=”http://twitter.com/home?status=Trying to reduce costs through standardisation often simply pushes the costs elsewhere. http://jamesbowman.me/standardisation-in-the-enterprise @jamesebowman”>Tweet this</a>
 
 This phenomonon is often explained using an adage called [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law).  It states that:
 
