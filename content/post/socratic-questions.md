@@ -21,6 +21,8 @@ In my last [blog post]({{< ref "leadership-styles.md" >}}), I looked at situatio
 
 Like other 'Pull' influencing techniques, Socratic questions and the Socratic method can be particularly effective when trying to overcome resistence or resolve differences of opinion.  This is because the technique helps the individual to critically examine the logic of their own argument and is highly effective at highlighting any flaws or inconsistencies in that logic in a non-confrontational way.  This is especially useful when dealing with people suffering from [illusory superiority](https://en.wikipedia.org/wiki/Illusory_superiority) (the [Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)) as it can help them consider broader perspectives and identify their own lack of knowledge.  Since Socrates believed the first step to knowledge was recognition of one's own ignorance it follows that his method focuses not so much on proving your point but on helping the other person recognise the flaws in theirs.
 
+{{< clicktotweet >}} Socrates believed the first step to knowledge was recognition of one's own ignorance {{< /clicktotweet >}}
+
 There are essentially 6 types of Socratic questions (based upon those proposed by [R. W. Paul]):
 
 #### 1. Clarifying thinking and understanding
