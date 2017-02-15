@@ -31,8 +31,7 @@ Most Thesaurus' would say the opposite of the word standardisation is _deviation
 
 So it seems that both approaches (standardisation and customisation/diversification) have their own, albeit different, sets of benefits and drivers.  Standardisation is often bourne out of attempts to optimise the bottom line (costs) where as diversification and customisation tend to come about when optimising the top line (revenue).  Of course in reality, things are much more complicated.  
 
-><p>**Trying to reduce costs through standardisation often simply pushes the costs elsewhere.**</p>
-<a class="bloglogo" href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Trying%20to%20reduce%20costs%20through%20standardisation%20often%20simply%20pushes%20the%20costs%20elsewhere%20by%20%40jamesbowman%20http%3A%2F%2Fjamesbowman.me%2Fpost%2Fstandardisation-in-the-enterprise', '_blank', 'width=500,height=500'); return false;"><span class="icon-twitter" style="color:#00aced;font-size:1em"> Click to Tweet</span></a>
+{{< clicktotweet >}} Trying to reduce costs through standardisation often simply pushes the costs elsewhere. {{< /clicktotweet >}}
 
 For example, consider an organisation comprising 5 separate business units.  Each business unit does similar things but is discreet, perhaps because they are based in different territories or perhaps because they were formerly part of other companies that were acquired.  Each business unit have their own application(s) supporting their own processes, product sets and data structures.  As part of any attempt to consolidate the 5 software applications into one standardised application the organisation must either:
 
