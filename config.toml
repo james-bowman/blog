@@ -5,6 +5,9 @@ paginate = 5
 copyright = "All rights reserved 2017"
 disqusShortname = "jamesebowman"
 
+PygmentsCodeFences = true
+PygmentsStyle = "borland"
+
 [author]
   name = "James Bowman"
   email = "james.edward.bowman@gmail.com"
