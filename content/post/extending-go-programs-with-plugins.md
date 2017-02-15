@@ -18,12 +18,10 @@ I am really enjoying programming in Google's [Go] language but very occasionally
 
 In other languages, plugins are well supported and relatively easy to implement.  In Java for example, concrete implementations of an interface can be dynamically loaded and instantiated by reflection as shown in the snippet below.  Different implementations can be 'plugged' in simply by specifying the fully qualified name of the implementing class during reflection and ensuring it is defined on the CLASSPATH.  
 
-```java
-
+{{< highlight java >}}
 Class clazz = Class.forName(fullyQualifiedClassName);				
 Object product = clazz.newInstance();
-
-```
+{{< /highlight >}}
 
 Taking this one step further, Java has a set of conventions for creating and loading plugins called [SPI (Service Provider Interface)](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html).  This is used by Java itself to dynamically load XML library implementations.  Using the SPI, it is possible to simply place a new implementation on the CLASSPATH and it will be automatically picked up and used by the application dynamically at runtime.
 
