@@ -1,6 +1,6 @@
 {{ $quote := (trim .Inner " ") }}
 {{ $url := .Page.Permalink }}
-{{ $tweet := printf "'%s' - %s by @%s" $quote $url ( .Site.Params.twitterName ) }}
+{{ $tweet := printf "'%s' - %s?utm_source=twitter.com&utm_campaign=clicktotweet&utm_medium=social by @%s" $quote $url ( .Site.Params.twitterName ) }}
 {{ $urlquery := ($tweet | urlquery) }}
 {{ $clickhandler := (printf "window.open('https://twitter.com/intent/tweet?text=%s', '_blank', 'width=500,height=350'); return false;" $urlquery) }}
 {{ $onclick := (printf "onclick=%q" $clickhandler) }}
