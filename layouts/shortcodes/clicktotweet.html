@@ -6,6 +6,7 @@
 {{ $onclick := (printf "onclick=%q" $clickhandler) }}
 
 <blockquote>
-<p><strong>{{ $quote }}</strong></p>
-<a class="bloglogo" href="#" {{ $onclick | safeHTMLAttr }} style="text-decoration:none;"><span class="icon-twitter" style="color:#00aced;font-size:1em;"> Click to Tweet</span></a>
+<a class="bloglogo" href="#" {{ $onclick | safeHTMLAttr }} style="text-decoration:none;">
+<p>{{ $quote }}</p>
+<span class="icon-twitter" style="color:#00aced;font-size:1em;"> Click to Tweet</span></a>
 </blockquote>
