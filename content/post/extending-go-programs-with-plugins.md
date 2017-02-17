@@ -7,7 +7,12 @@ title = "Extending Go programs with plugins"
 description = "A look at some of the options for extending and customising Golang programs with plug-ins"
 aliases = ["/post/extending-go-programs-with-plug-ins/"]
 author = "James Bowman"
-
+image = "/post/Gopher-plugin.png"
+imageURL = "https://github.com/ashleymcnamara/gophers/blob/master/GOPHER_AVATARS.jpg"
+imageTitle = "'GOPHER_AVATARS' with added plugs"
+imageCreator = "Ashley McNamara"
+imageLicenceURL = "http://creativecommons.org/licenses/by-nc-sa/4.0/"
+imageLicenceName = "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license"
 +++
 
 I am really enjoying programming in Google's [Go] language but very occasionally come across things that aren't really possible, or considered idiomatic, in Go.  Go is a very opinionated language which is a good thing as it keeps the language and tool chain very simple but also means if you need to do something unusual, it can sometimes feel like you are fighting the language.  One example of this is developing [plugin]s.
