@@ -21,7 +21,7 @@ Unfortunatley this can be confusing and overwhelming, especially to people start
 
 You can see the complete visualisation here: 
 
-{{< figure src="/post/cdlandscape/ContinuousDeliveryToolLandscape.jpeg" link="/post/cdlandscape/ContinuousDeliveryToolLandscape.jpeg" alt="Continuous delivery tool landscape Jan 2017" >}}
+{{< figure src="/post/cdlandscape/ContinuousDeliveryToolLandscape.jpeg" link="/post/cdlandscape/ContinuousDeliveryToolLandscape-fullsize.jpeg" alt="Continuous delivery tool landscape Jan 2017" >}}
 
 I divided the landscape up into 5 high-level phases broadly aligned to a generic application lifecycle: Collaborate, Build, Test, Deploy and Run.  Within each phase, I then attempted to categorise the types of tools available.  Some tools within the same category address slightly different problems and can be considered complimentary to one another e.g. Terraform and Puppet/Chef.  Conversely, some of the tools e.g. MS Team Foundation Server, Go CD, Docker, etc. could appear in multiple categories.  Where this is the case, I have tried to place them once, in the primary category for which they are known.  
 

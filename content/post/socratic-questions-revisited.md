@@ -20,7 +20,7 @@ A little over a year ago, I wrote a [blog post]({{< ref "socratic-questions.md" 
 
 The infographic is shown below (click on the infographic for the full size version).
 
-{{< figure src="/post/socratic-questions-infographic.png" link="/post/socratic-questions-infographic.png" alt="Infographic illustrating the 6 types of Socratic Question" >}}
+{{< figure src="/post/socratic-questions-infographic.png" link="/post/socratic-questions-infographic-fullsize.png" alt="Infographic illustrating the 6 types of Socratic Question" >}}
 
 Please share any experiences in the comments below, or if there are particular types of questions you find useful to aid critical thinking that are not included.
 
