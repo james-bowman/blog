@@ -15,7 +15,7 @@ imageLicenceURL = "http://creativecommons.org/licenses/by-nc-sa/4.0/"
 imageLicenceName = "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license"
 +++
 
-I am really enjoying programming in Google's [Go] language but very occasionally come across things that aren't really possible, or considered idiomatic, in Go.  Go is a very opinionated language which is a good thing as it keeps the language and tool chain very simple but also means if you need to do something unusual, it can sometimes feel like you are fighting the language.  One example of this is developing [plugin]s.
+I am really enjoying programming in Google's [Go] language (Golang for search engines) but very occasionally come across things that aren't really possible, or considered idiomatic, in Go.  Go is a very opinionated language which is a good thing as it keeps the language and tool chain very simple but also means if you need to do something unusual, it can sometimes feel like you are fighting the language.  One example of this is developing [plugin]s.
 
 [Plugin]s are a way of allowing third parties to extend or customise the behaviour of an existing piece of software.  This can be useful in a variety of contexts but, most recently, whilst I was working on a [chat bot][talbot] I wanted to use plugins to allow people to easily extend the bot's capabilities without having to change the existing [code][talbot].
 
