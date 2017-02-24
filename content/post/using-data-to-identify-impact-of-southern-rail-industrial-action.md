@@ -45,9 +45,6 @@ It is clear that, as we predicted, the average price for the area served by Sout
 
 As with any results, these are open to interpretation and we must consider that this is only a single data point and a trend usually requires at least 3.  Furthermore, we could argue that although the dispute has been going on since around April time, it is still too soon to see any impact manifest in property transactions (as it is a trailing indicator and we only have house price data up until October).  This analysis assumes equal exposure to impact from train disruption across all local authorities but in practice, some local authorities will be more deeply affected than others with different percentages of the population relying on the trains.  Considering census data on how people travel to work could be a future enhancement.  Additionally, people residing outside the Southern area, but who drive to Southern train stations to catch trains are not accounted for in this analysis.  Finally, and perhaps most importantly, we have identified a [correlation and not necessarily a causation](https://xkcd.com/552/) - any change observed in property prices is not necessarily as a direct result of the industrial action.
 
-{{< figure src="https://imgs.xkcd.com/comics/correlation.png" link="https://xkcd.com/552/" alt="Correlation comic from XCD" >}}
-
-
 Whilst it is perhaps still too early to draw conclusions, I have enjoyed working with the data and will be interested to see what happens in the coming months as more data becomes available.  The code used to process, cleanse, analyse and visualise the data is available on Github [here][code].  I hope you have found my experiences interesting, please share your own experiences or thoughts in the comments section below.
 
 [code]: https://github.com/james-bowman/southerntrains
