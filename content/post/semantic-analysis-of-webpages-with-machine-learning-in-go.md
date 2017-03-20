@@ -153,6 +153,14 @@ func calcCosine(queryVector *mat64.Dense, tdmat *mat64.Dense, corpus []string, n
 }
 ```
 
+## Wrapping up
+
+We have looked at a number of ways to model text documents to support information retrieval each one building on the next.  We started with modelling documents as feature vectors of raw term frequencies which we then extended with tf-idf weighting.  We used tf-idf to weight the term frequencies according to how frequently the terms appeared across all the documents in the corpus thereby removing bias caused by commonly occuring words.  Finally we extended the model with Latent Semantic Analysis, applying Singular Value Decomposition to surface semantic meaning hidden beneath the term frequencies within the document feature vectors.
+
+I have really learnt a lot while implementing these algorithms both about machine learning concepts (and the requisite mathematics) and their applications.  There are a number of extensions to the library that I intend to make both to extend my knowledge but also its usefulness including an implementation of [LDA (Latent Dirichlet Allocation)](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) for effective topic extraction from the documents and possibly also implementations of clustering and classification algorithms like k-means, etc.
+
+If you have any experiences with using any of the algorithms I have described here or others that are related then please share your experiences in the comments section below.
+
 ## References
 
 1. [Wikipedia][]
