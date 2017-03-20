@@ -75,7 +75,7 @@ Latent Semantic Analysis relies on a mathematical process called [truncated Sing
 1. The act of truncating the least significant dimensions should reduce noise in the data leading to cleaner results
 1. Representing the document feature vectors in reduced dimensional space encodes co-occurance of terms and the hidden semantic meaning allowing matches between similar documents even with no terms in common.
 
-For the purposes of this example, I shall project the tf-idf term document matrix to 2 dimensions as the initial dimensionality is relatively low anyway and 2 dimensions lends itself to visualisation (as we will see later).  Usually in LSA, a value around 100 tends to yield the best results <sup>[1][]</sup>.  Lets take a look at our matrix of feature vectors following SVD.
+For the purposes of this example, I shall project the tf-idf term document matrix to 2 dimensions as the initial dimensionality is relatively low anyway and 2 dimensions lends itself to visualisation (as we will see later).  Usually in LSA, a value around 100 tends to yield the best results <sup>[2][]</sup>.  Lets take a look at our matrix of feature vectors following SVD.
 
 {{< figure src="/post/semanticanalysis/lsi.jpeg" link="/post/semanticanalysis/lsi.jpeg" alt="Feature vectors for articles following Singular Value Decomposition" >}}
 
@@ -156,12 +156,12 @@ func calcCosine(queryVector *mat64.Dense, tdmat *mat64.Dense, corpus []string, n
 ## References
 
 1. [Wikipedia][]
-1. [Rosario, Barbara. Latent Semantic Indexing: An overview. INFOSYS 240 Spring 2000][1]
+1. [Rosario, Barbara. Latent Semantic Indexing: An overview. INFOSYS 240 Spring 2000][2]
 1. [Latent Semantic Analysis, a scholarpedia article on LSA written by Tom Landauer, one of the creators of LSA.](http://www.scholarpedia.org/article/Latent_semantic_analysis)
 1. [Thomo, Alex. Latent Semantic Analysis (Tutorial).](http://webhome.cs.uvic.ca/~thomo/svd.pdf)
 1. [Latent Semantic Indexing. Standford NLP Course](http://nlp.stanford.edu/IR-book/html/htmledition/latent-semantic-indexing-1.html)
 
 
-[1]: http://people.ischool.berkeley.edu/~rosario/projects/LSI.pdf
+[2]: http://people.ischool.berkeley.edu/~rosario/projects/LSI.pdf
 [Wikipedia]: https://en.wikipedia.org/wiki/Latent_semantic_analysis
 [Github]: https://github.com/james-bowman/nlp
