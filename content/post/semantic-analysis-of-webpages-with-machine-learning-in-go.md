@@ -116,17 +116,17 @@ func main() {
 
     query := "the cunning creature ran around the canine"
 
-    tokeniser := nlp.NewCountVectoriser()
+    vectoriser := nlp.NewCountVectoriser()
     transformer := nlp.NewTfidfTransformer()
 
     // set k (the number of dimensions following truncation) to 2
     reducer := nlp.NewTruncatedSVD(2)
 
     // Fit and Transform the corpus into a term document matrix fitting the model to the documents in the process
-    mat, _ := tokeniser.FitTransform(testCorpus...)
+    mat, _ := vectoriser.FitTransform(testCorpus...)
     // transform the query into the same dimensional space - any terms in the query not in the original training data
     // the model was fitted to will be ignored
-    queryMat, _ := tokeniser.Transform(query)
+    queryMat, _ := vectoriser.Transform(query)
     calcCosine(queryMat, mat, testCorpus, "Raw TF")
 
     tfidfmat, _ := transformer.FitTransform(mat)
