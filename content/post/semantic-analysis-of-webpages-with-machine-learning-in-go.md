@@ -102,7 +102,7 @@ import (
     "fmt"
 
     "github.com/gonum/matrix/mat64"
-    "github.com/james-bowman/nlp
+    "github.com/james-bowman/nlp"
 )
 
 func main() {
