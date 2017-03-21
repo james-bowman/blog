@@ -2,7 +2,7 @@ box: debian
 build:
   steps:
     - arjen/hugo-build:
-        version: 0.14
+        version: "0.19"
         theme: mycasper
         config: config.toml
 deploy:
