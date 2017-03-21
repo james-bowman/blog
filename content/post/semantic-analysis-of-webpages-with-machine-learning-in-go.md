@@ -72,24 +72,24 @@ Whilst we are now getting clean similarity scores based on word occurance, we ar
 Latent Semantic Analysis relies on a mathematical process called [truncated Singular Value Decomposition (SVD)](https://en.wikipedia.org/wiki/Singular_value_decomposition#Reduced_SVDs) to reduce the dimensionality of the term document matrix.  Truncated SVD yields a new matrix that is the closest approximation to the original matrix within a significantly reduced dimensional space.  There are a number of advantages to the reduced dimensions as follows:
 
 1. The reduced dimensions should theoretically require less memory to store
-1. The act of truncating the least significant dimensions should reduce noise in the data leading to cleaner results
+1. The act of truncating the least significant dimensions can reduce noise in the data leading to cleaner results
 1. Representing the document feature vectors in reduced dimensional space encodes co-occurance of terms and the hidden semantic meaning allowing matches between similar documents even with no terms in common.
 
 For the purposes of this example, I shall project the tf-idf term document matrix into 2 dimensions as the initial dimensionality is relatively low anyway and 2 dimensions lends itself to visualisation (as we will see later).  Usually in LSA, a value around 100 tends to yield the best results <sup>[2][]</sup>.  Lets take a look at our matrix of feature vectors following SVD.
 
 {{< figure src="/post/semanticanalysis/lsi.jpeg" link="/post/semanticanalysis/lsi.jpeg" alt="Feature vectors for articles following Singular Value Decomposition" >}}
 
-It should be clear that where previously we had a row for every term within the matrix, we now have only 2 dimensions to the matrix which represent the 2 dimensions of largest variation amongst the documents.  As before, we must also project the query into the same dimensional space as the documents before we can compare them for similarity.
+It should be clear that where we previously had a row for every term within the matrix, we now have only 2 dimensions to the matrix which represent the 2 dimensions of largest variation amongst the documents.  As before, we must also project the query into the same dimensional space as the documents before we can compare them for similarity.
 
 As the documents are now represented in 2 dimensions, it is possible to plot each document vector to help visualise clustering patterns in the documents.  Lets take a look.
 
 {{< figure src="/post/semanticanalysis/plot.jpeg" link="/post/semanticanalysis/plot.jpeg" alt="Visualising the documents in 2 dimensional space" >}}
 
-The saavy reader may have noticed that I have used logarithmic scales on both axis - this was to improve readability of the visualisation and make the angle between the query and other documents clearer.  Looking at the plot, it should be clear that the documents have formed into 2 main clusters in this dimensional space.  Those that are related to foxes and dogs, and those that are not.  We can also see that the query is closer in angle (measured by the line from the origin to the point marked in the plot) to the cluster of documents relating to foxes and dogs which is exactly as it should be.  Lets check the cosine similarities of the query with the document vectors in this dimensional space to check we are correct.
+The saavy reader may have noticed that I have used logarithmic scales on both axis - this was to improve readability of the visualisation and make the angle between the query and other documents clearer.  Looking at the plot, we can see that the documents have formed into 2 main clusters in this dimensional space.  Those that are related to foxes and dogs, and those that are not.  We can also see that the query is closer in angle (measured by a line from the origin to the point marked in the plot) to the cluster of documents relating to foxes and dogs which is exactly as it should be.  Lets check the cosine similarities of the query with the document vectors in this dimensional space to check we are correct.
 
 {{< figure src="/post/semanticanalysis/lsi-cosine.jpeg" link="/post/semanticanalysis/lsi-cosine.jpeg" alt="Cosine similarities between query and each document in corpus after SVD factorisation" >}}
 
-The cosine similarity scores support our observations from the plot.  We can also see that our query `"the cunning creature ran around the canine"` matches the document `"The quick brown fox jumped over the lazy dog"` even though they share no terms in common.  The LSA has successfully resolved that they are both semantically related to foxes and dogs.
+The cosine similarity scores support our observations from the plot.  We can also see that our query `"the cunning creature ran around the canine"` strongly matches the document `"The quick brown fox jumped over the lazy dog"` even though they share no terms in common.  The LSA has successfully resolved that they are both semantically related to foxes and dogs.
 
 ## Go implement it (pun intended)
 
