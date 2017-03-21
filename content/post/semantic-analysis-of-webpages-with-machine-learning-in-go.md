@@ -23,7 +23,7 @@ We will attempt to use this article as a query to find similar or related articl
 	"the little dog laughed to see such fun"
 	"and the dish ran away with the spoon"
 
-The approaches we will consider for this example will work with any type of query equally whether the query is itself an article as above or simply a short string of words.  The code used in this example is on [Github][] and code demoing its use is included at the [end of this blog post]({{< ref "go-implement-it-pun-intended" >}}).
+The approaches we will consider for this example will work with any type of query equally whether the query is itself an article as above or simply a short string of words.  The code used in this example is on [Github][] and code demoing its use is included at the [end of this blog post]({{< ref "#go-implement-it-pun-intended" >}}).
 
 ## Term Frequency
 
