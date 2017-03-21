@@ -23,7 +23,7 @@ We will attempt to use this article as a query to find similar or related articl
 	"the little dog laughed to see such fun"
 	"and the dish ran away with the spoon"
 
-The approaches we will consider for this example will work with any type of query equally whether the query is itself an article as above or simply a short string of words.  The code used in this example is on [Github][] and included at the end of this blog post.
+The approaches we will consider for this example will work with any type of query equally whether the query is itself an article as above or simply a short string of words.  The code used in this example is on [Github][] and code demoing its use is included at the [end of this blog post]({{< ref "go-implement-it-pun-intended" >}}).
 
 ## Term Frequency
 
@@ -75,7 +75,7 @@ Latent Semantic Analysis relies on a mathematical process called [truncated Sing
 1. The act of truncating the least significant dimensions should reduce noise in the data leading to cleaner results
 1. Representing the document feature vectors in reduced dimensional space encodes co-occurance of terms and the hidden semantic meaning allowing matches between similar documents even with no terms in common.
 
-For the purposes of this example, I shall project the tf-idf term document matrix to 2 dimensions as the initial dimensionality is relatively low anyway and 2 dimensions lends itself to visualisation (as we will see later).  Usually in LSA, a value around 100 tends to yield the best results <sup>[2][]</sup>.  Lets take a look at our matrix of feature vectors following SVD.
+For the purposes of this example, I shall project the tf-idf term document matrix into 2 dimensions as the initial dimensionality is relatively low anyway and 2 dimensions lends itself to visualisation (as we will see later).  Usually in LSA, a value around 100 tends to yield the best results <sup>[2][]</sup>.  Lets take a look at our matrix of feature vectors following SVD.
 
 {{< figure src="/post/semanticanalysis/lsi.jpeg" link="/post/semanticanalysis/lsi.jpeg" alt="Feature vectors for articles following Singular Value Decomposition" >}}
 
@@ -93,7 +93,7 @@ The cosine similarity scores support our observations from the plot.  We can als
 
 ## Go implement it (pun intended)
 
-I have developed implementations for the algorithms described in this article and published them on [Github][].  The implementations are based on papers and tutorials in the public domain and the structure of the code takes some inspiration from Python's [scikit-learn](http://scikit-learn.org/stable/).  Here is an example of how to use the library to output cosine similarities between the query and document corpus following term frequency vectorisation, tf-idf transformation and SVD factorisation.
+I have developed implementations for the algorithms described in this article and published them on [Github][].  The implementations are based on papers and tutorials in the public domain and the structure of the code takes some inspiration from Python's [scikit-learn](http://scikit-learn.org/stable/).  Here is an example of how to use the library to output cosine similarities between the example query and document corpus used in this blog post following term frequency vectorisation, tf-idf transformation and SVD factorisation.
 
 ``` go
 package main
@@ -157,7 +157,7 @@ func calcCosine(queryVector *mat64.Dense, tdmat *mat64.Dense, corpus []string, n
 
 We have looked at a number of ways to model text documents to support information retrieval each one building on the next.  We started with modelling documents as feature vectors of raw term frequencies which we then extended with tf-idf weighting.  We used tf-idf to weight the term frequencies according to how frequently the terms appeared across all the documents in the corpus thereby removing bias caused by commonly occuring words.  Finally we extended the model with Latent Semantic Analysis, applying Singular Value Decomposition to surface semantic meaning hidden beneath the term frequencies within the document feature vectors.
 
-I have really learnt a lot while implementing these algorithms both about machine learning concepts (and the requisite mathematics) and their applications.  There are a number of extensions to the library that I intend to make both to extend my knowledge but also its usefulness including an implementation of [LDA (Latent Dirichlet Allocation)](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) for effective topic extraction from the documents and possibly also implementations of clustering and classification algorithms like k-means, etc.
+I have really learnt a lot while implementing these algorithms both about machine learning concepts (and the requisite mathematics) and their applications.  There are a number of extensions to [the library][Github] that I intend to make both to extend my knowledge but also its usefulness including an implementation of [LDA (Latent Dirichlet Allocation)](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) for effective topic extraction from the documents and possibly also implementations of clustering and classification algorithms like k-means, etc.
 
 If you have any experiences with using any of the algorithms I have described here or others that are related then please share your experiences in the comments section below.
 
