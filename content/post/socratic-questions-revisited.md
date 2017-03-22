@@ -1,5 +1,5 @@
 +++
-title = "Socratic questions revisited"
+title = "Socratic questions revisited [infographic]"
 description = "Infographic illustrating the 6 types of Socratic Question to stimulate critical thinking"
 categories = ["Coaching"]
 tags = ["coaching", "leadership", "development", "influencing", "psychology", "critical thinking"]
