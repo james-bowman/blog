@@ -99,57 +99,57 @@ I have developed implementations for the algorithms described in this article an
 package main
 
 import (
-    "fmt"
+	"fmt"
 
-    "github.com/gonum/matrix/mat64"
-    "github.com/james-bowman/nlp"
+	"github.com/gonum/matrix/mat64"
+	"github.com/james-bowman/nlp"
 )
 
 func main() {
-    testCorpus := []string{
-        "The quick brown fox jumped over the lazy dog",
-        "hey diddle diddle, the cat and the fiddle",
-        "the fast cunning brown fox liked the slow canine dog ",
-        "the little dog laughed to see such fun",
-        "and the dish ran away with the spoon",
-    }
+	testCorpus := []string{
+		"The quick brown fox jumped over the lazy dog",
+		"hey diddle diddle, the cat and the fiddle",
+		"the fast cunning brown fox liked the slow canine dog ",
+		"the little dog laughed to see such fun",
+		"and the dish ran away with the spoon",
+	}
 
-    query := "the cunning creature ran around the canine"
+	query := "the cunning creature ran around the canine"
 
-    vectoriser := nlp.NewCountVectoriser()
-    transformer := nlp.NewTfidfTransformer()
+	vectoriser := nlp.NewCountVectoriser(false)
+	transformer := nlp.NewTfidfTransformer()
 
-    // set k (the number of dimensions following truncation) to 2
-    reducer := nlp.NewTruncatedSVD(2)
+	// set k (the number of dimensions following truncation) to 2
+	reducer := nlp.NewTruncatedSVD(2)
 
-    // Fit and Transform the corpus into a term document matrix fitting the model to the documents in the process
-    mat, _ := vectoriser.FitTransform(testCorpus...)
-    // transform the query into the same dimensional space - any terms in the query not in the original training data
-    // the model was fitted to will be ignored
-    queryMat, _ := vectoriser.Transform(query)
-    calcCosine(queryMat, mat, testCorpus, "Raw TF")
+	// Fit and Transform the corpus into a term document matrix fitting the model to the documents in the process
+	mat, _ := vectoriser.FitTransform(testCorpus...)
+	// transform the query into the same dimensional space - any terms in the query not in the original training data
+	// the model was fitted to will be ignored
+	queryMat, _ := vectoriser.Transform(query)
+	calcCosine(queryMat, mat, testCorpus, "Raw TF")
 
-    tfidfmat, _ := transformer.FitTransform(mat)
-    tfidfquery, _ := transformer.Transform(queryMat)
-    calcCosine(tfidfquery, tfidfmat, testCorpus, "TF-IDF")
+	tfidfmat, _ := transformer.FitTransform(mat)
+	tfidfquery, _ := transformer.Transform(queryMat)
+	calcCosine(tfidfquery, tfidfmat, testCorpus, "TF-IDF")
 
-    lsi, _ := reducer.FitTransform(tfidfmat)
-    queryVector, _ := reducer.Transform(tfidfquery)
-    matched, score = calcCosine(queryVector, lsi, testCorpus, "LSA")
+	lsi, _ := reducer.FitTransform(tfidfmat)
+	queryVector, _ := reducer.Transform(tfidfquery)
+	calcCosine(queryVector, lsi, testCorpus, "LSA")
 }
 
 func calcCosine(queryVector *mat64.Dense, tdmat *mat64.Dense, corpus []string, name string) {
-    // iterate over document feature vectors (columns) in the LSI and compare with the
-    // query vector for similarity.  Similarity is determined by the difference between
-    // the angles of the vectors known as the cosine similarity
-    _, docs := tdmat.Dims()
+	// iterate over document feature vectors (columns) in the LSI and compare with the
+	// query vector for similarity.  Similarity is determined by the difference between
+	// the angles of the vectors known as the cosine similarity
+	_, docs := tdmat.Dims()
 
-    fmt.Printf("Comparing based on %s\n", name)
+	fmt.Printf("Comparing based on %s\n", name)
 
-    for i := 0; i < docs; i++ {
-        similarity := nlp.CosineSimilarity(queryVector.ColView(0), tdmat.ColView(i))
-        fmt.Printf("Comparing '%s' = %f\n", corpus[i], similarity)
-    }
+	for i := 0; i < docs; i++ {
+		similarity := nlp.CosineSimilarity(queryVector.ColView(0), tdmat.ColView(i))
+		fmt.Printf("Comparing '%s' = %f\n", corpus[i], similarity)
+	}
 }
 ```
 
