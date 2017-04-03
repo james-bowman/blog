@@ -6,7 +6,8 @@ copyright = "All rights reserved 2017"
 disqusShortname = "jamesebowman"
 
 PygmentsCodeFences = true
-PygmentsStyle = "borland"
+PygmentsStyle = "vs"
+#PygmentsStyle = "borland"
 
 [author]
   name = "James Bowman"
