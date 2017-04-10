@@ -192,7 +192,7 @@ func BenchmarkTFIDF3FitTransform30000x3000(b *testing.B) {
 }
 ```
 
-The benchmarks are run in the same way as tests except that the `-bench` option is used to express a regular expression matching the names of benchmark functions to run.  The regular expression `.` will match all benchmarks or as in the output below, `30000` will match and run all benchmarks with 30000 in the function name.  The `-benchmem` function will output memory allocations during the benchmark.  Here are the results of the benchmarks.
+The benchmarks are run in the same way as tests except that the `-bench` option is used to express a regular expression matching the names of benchmark functions to run.  The regular expression `.` will match all benchmarks or as in the output below, `30000` will match and run all benchmarks with 30000 in the function name.  The `-benchmem` option will output memory allocations during the benchmark.  Here are the results of the benchmarks.
 
 ```
 $ go test -bench=30000 -benchmem
@@ -210,7 +210,7 @@ ok      github.com/james-bowman/nlpbench    121.167s
 
 From the benchmark results, we can see that as we expected, the `Fit()` method on the original implementation is allocating around 7 GB of memory (first row).  In comparison we can see that the new array based `Fit()` implementation is allocating around 250 KB.  This is a significant improvement, but how does the performance stack up?
 
-According to the benchmark, the original implementation took 41773814068 nano seconds to perform the transform (second row).  Comparing this with 1669005488 nano seconds for the second nested loop based implementation (TfidfTransformer2 - row 5) would suggest the nested loop implementation is around 20 times faster.  If we further compare the third implementation (TfidfTransformer3), using the `Apply()` method and delegating the iteration over matrix elements down into the optimised LAPACK/BLAS libraries (row 7) we can see this is about twice as fast as the second implementation executing in around half the time.  As we would expect memory usage is the same for both implementation 2 and 3.  
+According to the benchmark, the original implementation took 41773814068 nano seconds to perform the transform (second row).  Comparing this with 1669005488 nano seconds for the second nested loop based implementation (TfidfTransformer2 - row 5) would suggest the nested loop implementation is around 20 times faster.  If we further compare the third implementation (TfidfTransformer3), using the `Apply()` method and delegating the iteration over matrix elements down into the optimised LAPACK/BLAS libraries (row 7) we can see this is about twice as fast as the second implementation executing in around half the time.  As we would expect,memory usage is the same for both implementation 2 and 3.
 
 ## Wrapping up
 
