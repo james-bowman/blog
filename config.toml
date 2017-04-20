@@ -44,6 +44,7 @@ PygmentsStyle = "vs"
   disqus_show_comment_count = "true"
   RSSLink = "http://feeds.jamesbowman.me/jamesbowman/blog"
   customHeaderPartial = "customHeader.html"
+  customFooterPartial = "customFooter.html"
 
 [params.coverAttribution]
   imageURL = "https://www.flickr.com/photos/thomaschristensen/2081043813/in/photostream/"
