@@ -2,7 +2,7 @@
 date = "2017-03-31T16:31:29+01:00"
 title = "Optimising algorithms in Go for machine learning"
 categories = ["Development"]
-tags = ["development", "machine learning", "go", "benchmark", "optimisation"]
+tags = ["development", "machine learning", "go", "algorithms", "data structures"]
 draft = false
 description = "Benchmarking and optimising algorithms in Golang for machine learning and large data sets"
 image = "/post/optimising-algorithms.jpg"
