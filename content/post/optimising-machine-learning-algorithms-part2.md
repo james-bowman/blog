@@ -344,7 +344,7 @@ func BenchmarkSparseEndToEndVectAndTrans(b *testing.B) {
 }
 ```
 
-The results are shown below.  We can see that the current dense implementation of steps 1 & 2(with the optimisations made in the previous post in this series) took 10.9 seconds to complete and consumes over 1 GB of memory.  In contrast, the new sparse based implementation takes only 7.1 seconds to complete and consumes only 150 MB of memory.  
+The results are shown below.  We can see that the current dense implementation of steps 1 & 2(with the optimisations made in the [previous post in this series]({{< ref "optimising-machine-learning-algorithms.md" >}})) took 10.9 seconds to complete and consumes over 1 GB of memory.  In contrast, the new sparse based implementation takes only 7.1 seconds to complete and consumes only 150 MB of memory.  
 
 ```
 Jamess-MacBook-Pro:nlpbench jbowman$ go test -bench=EndToEndVectAndTrans -benchmem
