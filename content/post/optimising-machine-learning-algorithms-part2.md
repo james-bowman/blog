@@ -152,8 +152,8 @@ The results are shown below.  It should be clear from the results that the new S
 
 ```
 Jamess-MacBook-Pro:nlpbench jbowman$ go test -bench=CountVectoriserTransform -benchmem
-BenchmarkDenseCountVectoriserTransform-4   	       1	1149735130 ns/op	588033600 B/op	  688868 allocs/op
-BenchmarkDOKCountVectoriserTransform-4     	       2	 849252150 ns/op	83780632 B/op	  712011 allocs/op
+BenchmarkDenseCountVectoriserTransform-4  1	  1149735130 ns/op	 588033600 B/op	  688868 allocs/op
+BenchmarkDOKCountVectoriserTransform-4    2	  849252150 ns/op	 83780632 B/op	  712011 allocs/op
 PASS
 ok  	github.com/james-bowman/nlpbench	6.640s
 ```
@@ -256,7 +256,8 @@ func (t *SparseTfidfTransformer) Transform(mat mat64.Matrix) (mat64.Matrix, erro
 
 func (t *SparseTfidfTransformer) FitTransform(mat mat64.Matrix) (mat64.Matrix, error) {
 	return t.Fit(mat).Transform(mat)
-}```
+}
+```
 
 This time, there is a little more difference between the 2 implementations.  If the input matrix is CSR format we take advantage of the RowNNZ() method to quickly determine the number of non-zero values in the row which is used to calculate the inverse document frequency (the number of documents each term occurs in).
 
@@ -298,8 +299,8 @@ The results are shown below.  It should be clear from the results that the new S
 
 ```
 Jamess-MacBook-Pro:nlpbench jbowman$ go test -bench=TfidfFitTransform -benchmem
-BenchmarkDenseTfidfFitTransform-4    	       1	2238133519 ns/op	537378960 B/op	       4 allocs/op
-BenchmarkSparseTfidfFitTransform-4   	      10	 138069814 ns/op	16253248 B/op	      12 allocs/op
+BenchmarkDenseTfidfFitTransform-4   1	2238133519 ns/op	537378960 B/op	       4 allocs/op
+BenchmarkSparseTfidfFitTransform-4  10	 138069814 ns/op	16253248 B/op	      12 allocs/op
 PASS
 ok  	github.com/james-bowman/nlpbench	8.277s
 ```
@@ -347,8 +348,8 @@ The results are shown below.  We can see that the current dense implementation o
 
 ```
 Jamess-MacBook-Pro:nlpbench jbowman$ go test -bench=EndToEndVectAndTrans -benchmem
-BenchmarkDenseEndToEndVectAndTrans-4    	       1	10985533558 ns/op	1180186600 B/op	 1379681 allocs/op
-BenchmarkSparseEndToEndVectAndTrans-4   	       1	7108814306 ns/op	154845712 B/op	 1403018 allocs/op
+BenchmarkDenseEndToEndVectAndTrans-4    1	10985533558 ns/op	1180186600 B/op	 1379681 allocs/op
+BenchmarkSparseEndToEndVectAndTrans-4   1	7108814306 ns/op	154845712 B/op	 1403018 allocs/op
 PASS
 ok  	github.com/james-bowman/nlpbench	19.455s
 ```
