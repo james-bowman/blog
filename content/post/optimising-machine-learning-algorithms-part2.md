@@ -18,7 +18,7 @@ In the [previous post]({{< ref "optimising-machine-learning-algorithms.md" >}}) 
 
 Machine learning applications typically model entities as vectors of numerical features so that they may be compared and analysed quantitively.  These vectors can be considered collectively as a matrix.  In the case of [Latent Semantic Analysis (LSA)]({{< ref "semantic-analysis-of-webpages-with-machine-learning-in-go.md" >}}) as implemented in the [nlp project](http://github.com/james-bowman/nlp), documents are the entities and the words/terms they contain are the features.  The elements within the matrix represent the frequency that each word appears in the associated document.  [For more detailed explanation of term document matrices and LSA please refer to this blog post]({{< ref "semantic-analysis-of-webpages-with-machine-learning-in-go.md" >}}).
 
-The vocabulary of words occuring within a modestly sized document corpus of 3,000 documents could be hundreds of thousands of words.  However, each document probably only contains a couple of hundred unique terms.  To represent such a corpus as numerical feature vectors would therefore require a ~200,000 x 3,000 matrix (terms x documents) with 99% of the elements containing zeros.  Storing all the elements of such a matrix, using 64 bits per element, would require over 4GB of memory (64 x 200,000 x 3,000).
+The vocabulary of words occuring within a modestly sized document corpus of 3,000 documents could be hundreds of thousands of words.  However, each document probably only contains a couple of hundred unique terms.  To represent such a corpus as numerical feature vectors would therefore require a ~200,000 x 3,000 matrix (terms x documents) with 99% of the elements containing zeros.  Storing all the elements of such a matrix, using 64 bits per element, would require over 4GB of memory.
 
 Thankfully, there are data structures and algorithms specifically designed for dealing with such sparse matrices that capitalise on the sparsity of the matrix by only storing the non-zero values.  This reduces the memory/storage requirements and processing effort to represent and process the matrix.
 
@@ -36,29 +36,29 @@ A common practice is to construct sparse matrices using a creational format e.g.
 
 #### DOK (Dictionary Of Keys) format
 
-DOK format uses a dictionary data structure (a map in Go) as its backing store, mapping row/column pairs (i, j) to matrix elements containing non-zero values.  Only non-zero values and their row/column index pairs are stored so any items missing from the map are assumed to be zero.  Using a hash map as the underlying data structure means random access (reads and writes) is relatively fast (_O(1)_) but sequential iteration over the elements is relatively slow making this format a good choice for incrementally constructing or updating a matrix but poor for arithmetic operations.
+DOK format uses a dictionary/map data structure as its backing store, mapping row/column pairs (i, j) to matrix elements containing non-zero values.  Only non-zero values and their row/column index pairs are stored so any items missing from the map are assumed to be zero.  Using a hash map as the underlying data structure means random access (both reads and writes) is relatively fast (_O(1)_) but sequential iteration over the elements is relatively slow making this format a good choice for incrementally constructing or updating a matrix but poor for arithmetic operations.
 
 #### COO (COOrdinate) format
 
-Also known as Triplet format, the COO format matrix stores the row and column indices of non-zero values along with the values themselves.  Each row index, column index and data value tuple is stored in 3 respective slices such that `element(row[i], column[i]) = value[i]`.  Since the slices are unordered and duplicate elements are allowed, appending new non-zero elements to the end of the slices is a very fast operation (_O(1)_).  However, this also means that random access reads of elements is relatively slow (_O(n)_) and sequential iteration can also be slow (sorting the slices can improve access times).  These characteristics make this matrix format a good choice for initial construction of a matrix, adding new non-zero elements to an existing matrix or as an intermediate format for converting to CSR format but poor for arithmetic operations (assuming the slices are unsorted).
+Also known as Triplet format, the COO format stores the row and column indices of non-zero values along with the values themselves.  Each row index, column index and data value tuple is stored in 3 respective slices such that `element(row[i], column[i]) = value[i]`.  Since the slices are unordered and duplicate elements are allowed, appending non-zero elements to the end of the slices is very fast (_O(1)_).  However, this also means that random access reads of elements is relatively slow (_O(n)_) and sequential iteration can also be slow (sorting the slices can improve access times).  These characteristics make this matrix format a good choice for initial construction of a matrix or as an intermediate format for converting to CSR format but poor for arithmetic operations (assuming the slices are unsorted).
 
 ### 2. Operational Formats
 
 #### CSR (Compressed Sparse Row) format
 
-Also known as CRS (Compressed Row Storage), this format is similar to COO above except that the row index slice is compressed.  Specifically, the row index slice stores the cumulative count of non-zero elements in each row such that `row[i]` contains the index into both `column[]` and `data[]` of the first non-zero element of row `i`.  Thus ranging across data from `data[row[i]]` to `data[row[i+1]-1]` will yield all values within row `i`.  For a more detailed explanation of CSR format please refer [here](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_.28CSR.2C_CRS_or_Yale_format.29).
+Also known as CRS (Compressed Row Storage), this format is similar to COO above except that the row index slice is compressed.  Specifically, the row index slice stores the cumulative count of non-zero elements in each row such that `row[i]` contains the index into both `column[]` and `data[]` of the first non-zero element of row `i`.  Thus ranging across data from `data[row[i]]` to `data[row[i+1]-1]` will yield all values from row `i`.  For a more detailed explanation of CSR format please refer [here](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_.28CSR.2C_CRS_or_Yale_format.29).
 
-Relative to COO, the compression reduces storage requirements, allows faster random access reads of elements and row slicing but means making changes to the sparsity pattern is very slow (changing a zero value to non-zero).  These characteristics make this format a poor choice for random access updates, acceptable for random access reads and relatively good for arithmetic operations.
+Relative to COO, the compression reduces storage requirements, allows faster random access reads of elements and row slicing but means making changes to the sparsity pattern is very slow (changing a zero value to non-zero).  These characteristics make this format a poor choice for random access updates, passable for random access reads and good for arithmetic operations.
 
 #### CSC (Compressed Sparse Column) format
 
-Also known as CCS (Compressed Column Storage), this format is identical to CSR above except that the column index slice is compressed rather than the row index slice as with CSR.  The result is that CSC naturally stores values in column major order rather than row major order as with CSR.  CSC can be thought of as a natural transpose of CSR.
+Also known as CCS (Compressed Column Storage), this format is identical to CSR above except that the column index slice is compressed rather than the row index slice as with CSR.  The result is that CSC stores values in column major order rather than row major order as with CSR.  CSC can be thought of as a natural transpose of CSR.
 
 ### 3. Specialised Formats
 
 #### DIA (DIAgonal) format
 
-DIA is a specialised format for storing symmetric diagonal matrices.  Symmetric diagonal matrices are square shaped and so have the same number of rows and columns, with only the values along the diagonal (top left to bottom right) having non-zero values.  The DIA format takes advantage of this fact by only storing the diagonal values which it stores in a single slice such that `element(i, j) = value[j] or 0 if i != j`.
+DIA is a specialised format for storing symmetric diagonal matrices.  Symmetric diagonal matrices are square shaped and so have the same number of rows and columns, with only the elements along the diagonal (top left to bottom right) containing non-zero values.  The DIA format takes advantage of this fact by only storing the diagonal values which it stores in a single slice such that `element(i, j) = value[j] or 0 if i != j`.
 
 ## Putting it into Practice
 
@@ -72,7 +72,7 @@ Currently, each of these 3 steps outputs a dense matrix.  In addition, the TF-ID
 
 ### 1. Feature Extraction/Vectorisation
 
-Step 1 constructs a matrix incrementally based upon the terms encountered whilst parsing the document corpus.  We believe the matrix will be very sparse as most documents will only contain a couple of hundred unique terms from a corpus wide vocabulary of hundreds of thousands of terms.  The current dense matrix implementation will be very wasteful storing all of the zero values in addition to the non-zero values so a creational sparse matrix format may be the most appropriate format to use.  Specifically, the DOK (Dictionary Of Keys) format is most suited in this case as the matrix is incrementally constructed.
+Step 1 constructs a matrix incrementally based upon the terms encountered whilst parsing the document corpus.  We suspect the matrix will be very sparse as most documents will only contain a couple of hundred unique terms from a corpus wide vocabulary of hundreds of thousands of terms.  The current dense matrix implementation is therefore very wasteful storing all of the zero values in addition to the non-zero values.  A creational sparse matrix format is probably the most appropriate format to use for this step.  Specifically, a DOK (Dictionary Of Keys) format will be most suited in this case as the matrix is constructed incrementally.
 
 Here is a code snippet showing the current feature extraction using a Dense format matrix.
 
@@ -116,7 +116,7 @@ func (v *DOKCountVectoriser1) Transform(docs ...string) (*sparse.DOK, error) {
 }
 ```
 
-As you can see there is little difference to the code beyond which matrix type is constructed.  To test the two versions I used Go's built in benchmark functionality and a subset of the 20 Newsgroups dataset as used in Scikit Learn.  The subset of the dataset used for this benchmark comprises 2,001 documents representing a vocabulary of 33,552 unique terms.  This results in a a term document matrix of size 33,552 x 2,001 with only 385,944 non-zero values (99.5% of the matrix elements contain zero values).  Here are the two benchmark functions.
+As you can see there is little difference to the code beyond the type of matrix used.  To test the two versions I used Go's built in benchmark functionality and a subset of the 20 Newsgroups dataset as used in Scikit Learn.  The subset of the dataset used for this benchmark comprises 2,001 documents representing a vocabulary of 33,552 unique terms.  This results in a a term document matrix of size 33,552 x 2,001 with only 385,944 non-zero values (99.5% of the matrix elements contain zero values).  Here are the two benchmark functions.
 
 ``` Go
 // Benchmark feature extraction vectorisation into Dense vs Sparse matrices
@@ -160,11 +160,11 @@ ok  	github.com/james-bowman/nlpbench	6.640s
 
 ### 2. TF/IDF Weighting
 
-In the [previous post]({{< ref "optimising-machine-learning-algorithms.md" >}}) in this series, we identified the TF-IDF weightings matrix to be a symmetric diagonal matrix and so switched to storing it as a simple slice containing just the diagonal values.  This resulted in material improvements to both storage requirements and processing time.  We will now switch back to using a matrix for the TF-IDF weightings but this time, rather than using a dense matrix as before, we will use the appropriate DIAgonal sparse matrix format.
+In the [previous post]({{< ref "optimising-machine-learning-algorithms.md" >}}) in this series, we identified the TF-IDF weightings matrix to be a symmetric diagonal matrix and so switched to storing it as a simple slice containing just the diagonal values.  This resulted in material improvements to both storage requirements and processing time.  We will now switch back to using a matrix for the TF-IDF weightings but this time, rather than using a dense matrix format as before, we will use the appropriate DIAgonal sparse matrix format.
 
-Step 2, takes the term document matrix constructed during step 1, extracts weighting values and now stores them in a DIAgonal matrix and then multiplies it by the term document matrix.  The resulting product will have the same sparsity pattern of non-zero values as the input term document matrix.  As the product will clearly therefore also be a sparse matrix and will be the result of an arithmetic operation we should consider the CSR (Compressed Sparse Row) sparse matrix format for this matrix.  We should also consider converting the input matrix to CSR prior to the arithmetic operation.
+Step 2, takes the term document matrix constructed during step 1, extracts weighting values and stores them in a DIAgonal matrix which is then multiplied by the term document matrix.  The resulting matrix product will have the same sparsity pattern of non-zero values as the input term document matrix.  As the product will clearly therefore also be a sparse matrix and will be the result of an arithmetic operation we should consider the CSR (Compressed Sparse Row) sparse matrix format for this matrix.  We should also consider converting the input matrix to CSR prior to the arithmetic operation.
 
-Here is a code snippet showing the current TF-IDF using a Dense format matrix and a slice for the tf-idf weighting values.
+Here is a code snippet showing the current TF-IDF implementation using a Dense format matrix and a slice for the tf-idf weighting values.
 
 ``` Go
 type TfidfTransformer3 struct {
@@ -208,7 +208,7 @@ func (t *TfidfTransformer3) FitTransform(mat mat64.Matrix) (*mat64.Dense, error)
 }
 ```
 
-And here is the same code modified to use sparse format matrices for both the TF-IDF weighting values (DIAgonal format) and (CSR - Compressed Sparse Row format) for the input and output matrices.
+And here is the same code modified to use sparse format matrices for both the TF-IDF weighting values (DIAgonal format) and for the input and output matrices (CSR - Compressed Sparse Row format).
 
 ``` Go
 type SparseTfidfTransformer struct {
@@ -262,7 +262,7 @@ func (t *SparseTfidfTransformer) FitTransform(mat mat64.Matrix) (mat64.Matrix, e
 }
 ```
 
-This time, there is a little more difference between the 2 implementations.  If the input matrix is CSR format we take advantage of the RowNNZ() method to quickly determine the number of non-zero values in the row which is used to calculate the inverse document frequency (the number of documents each term occurs in).
+This time, there is a little more difference between the 2 implementations.  If the input matrix is CSR format we take advantage of the RowNNZ() method to efficiently determine the number of non-zero values in each row which is used to calculate the inverse document frequency (the number of documents each term occurs in).  The TF-IDF weighting matrix is then multiplied by the input term document matrix.
 
 To test the two versions I used Go's built in benchmark functionality and the same subset of the 20 Newsgroups dataset as used in Scikit Learn.  Here are the two benchmark functions.
 
@@ -346,7 +346,7 @@ func BenchmarkSparseEndToEndVectAndTrans(b *testing.B) {
 }
 ```
 
-The results are shown below.  We can see that the current dense implementation of steps 1 & 2(with the optimisations made in the [previous post in this series]({{< ref "optimising-machine-learning-algorithms.md" >}})) took 3.3 seconds to complete and consumes over 1 GB of memory.  In contrast, the new sparse based implementation takes only 1.2 seconds to complete and consumes only 150 MB of memory.  
+The results are shown below.  We can see that the current dense implementation of steps 1 & 2 (with the optimisations made in the [previous post in this series]({{< ref "optimising-machine-learning-algorithms.md" >}})) took 3.3 seconds to complete and consumes over 1 GB of memory.  In contrast, the new sparse format based implementation takes only 1.2 seconds to complete and consumes only 150 MB of memory.
 
 ```
 Jamess-MacBook-Pro:nlpbench jbowman$ go test -bench=EndToEndVect -benchmem
@@ -360,6 +360,6 @@ ok  	github.com/james-bowman/nlpbench	5.110s
 
 Using Sparse matrix formats in the place of Dense formats can significantly reduce both memory consumption and processing time.  Not necessarily because the algorithms are cleverer but simply because they are doing less work by processing only the non-zero elements.  Switching to sparse matrix formats, we saw a reduction in memory consumption and processing time from 1 GB to 150 MB and 3.3 seconds to 1.2 seconds respectively.
 
-The sparse matrix format implementations used in this article are [available on Github](http://github.com/james-bowman/sparse) along with all the [benchmarks and sample code](http://github.com/james-bowman/nlp-bench) used in this article.  The sparse matrix library is still quite basic in terms of features and available operations and I am hoping to extend it in due course with other operations (e.g. add, subtract, etc.) and optimisations (e.g. parallel matrix multiplication, BLAS integration, etc.).
+The sparse matrix format implementations used in this article are [available on Github](http://github.com/james-bowman/sparse) along with all the [benchmarks and sample code](http://github.com/james-bowman/nlp-bench) used in this article.  The sparse matrix library is still quite basic in terms of features and available operations and I am hoping to extend it in due course with other operations (e.g. add, subtract, etc.) and further optimisations (e.g. parallel/fast matrix multiplication, BLAS integration, etc.).
 
 I would love to hear other people's experiences of using or developing dense or sparse matrix implementations and any challenges they encountered and how they overcame them.  Please share your experiences, thoughts and suggestions in the comments below.
