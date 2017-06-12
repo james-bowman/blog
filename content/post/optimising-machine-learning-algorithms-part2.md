@@ -225,8 +225,8 @@ func (t *SparseTfidfTransformer) Fit(mat mat64.Matrix) *SparseTfidfTransformer {
 	for i := 0; i < m; i++ {
 		df := 0
 		if isCsr {
-			// if matrix is CSR, take advantage of the RowNNZ() method to get 
-			// number of documents in which term appears.
+			// if matrix is CSR, take advantage of the RowNNZ() method to 
+			// get number of documents in which term appears.
 			df = csr.RowNNZ(i)
 		} else {
 			for j := 0; j < n; j++ {
@@ -239,8 +239,8 @@ func (t *SparseTfidfTransformer) Fit(mat mat64.Matrix) *SparseTfidfTransformer {
 		weights[i] = idf
 	}
 
-	// build a diagonal matrix from array of term weighting values for subsequent
-	// multiplication with term document matrics
+	// build a diagonal matrix from array of term weighting values for
+	// subsequent multiplication with term document matrics
 
 	t.transform = sparse.NewDIA(m, weights)
 
@@ -250,8 +250,8 @@ func (t *SparseTfidfTransformer) Fit(mat mat64.Matrix) *SparseTfidfTransformer {
 func (t *SparseTfidfTransformer) Transform(mat mat64.Matrix) (mat64.Matrix, error) {
 	product := &sparse.CSR{}
 
-	// simply multiply the matrix by our idf transform (the diagonal matrix of term 
-	// weights)
+	// simply multiply the matrix by our idf transform (the diagonal matrix 
+	// of term weights)
 	product.Mul(t.transform, mat)
 
 	return product, nil
