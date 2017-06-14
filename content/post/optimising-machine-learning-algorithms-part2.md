@@ -46,7 +46,7 @@ Also known as Triplet format, the COO format stores the row and column indices o
 
 #### CSR (Compressed Sparse Row) format
 
-Also known as CRS (Compressed Row Storage), this format is similar to COO above except that the row index slice is compressed.  Specifically, the row index slice stores the cumulative count of non-zero elements in each row such that `row[i]` contains the index into both `column[]` and `data[]` of the first non-zero element of row `i`.  Thus ranging across data from `data[row[i]]` to `data[row[i+1]-1]` will yield all values from row `i`.  For a more detailed explanation of [CSR sparse matrix format please refer here](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_.28CSR.2C_CRS_or_Yale_format.29).
+Also known as CRS (Compressed Row Storage), this format is similar to COO above except that the row index slice is compressed.  Specifically, the row index slice stores the cumulative count of non-zero elements in each row such that `row[i]` contains the index into both `column[]` and `data[]` of the first non-zero element of row `i`.  Thus ranging across data from `data[row[i]]` to `data[row[i+1]-1]` will yield all values from row `i`.  For [a more detailed explanation of CSR sparse matrix format please refer here](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_.28CSR.2C_CRS_or_Yale_format.29).
 
 Relative to COO, the compression reduces storage requirements, allows faster random access reads of elements and row slicing but means making changes to the sparsity pattern is very slow (changing a zero value to non-zero).  These characteristics make this format a poor choice for random access updates, passable for random access reads and good for arithmetic operations.
 
