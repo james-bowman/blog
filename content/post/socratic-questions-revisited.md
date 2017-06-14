@@ -16,7 +16,7 @@ imageLicenceName = "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Ge
 
 +++
 
-A little over a year ago, I wrote a [blog post]({{< ref "socratic-questions.md" >}}) examining Socratic Questions. Socratic Questions are a method of pull influencing that can be used to stimulate critical thinking.  To help make the question types easier to understand and remember for use in practice, I have gone back and created an infographic illustrating the 6 types of questions.
+A little over a year ago, I wrote a [blog post examining Socratic Questions]({{< ref "socratic-questions.md" >}}). Socratic Questions are a method of pull influencing that can be used to stimulate critical thinking.  To help make the question types easier to understand and remember for use in practice, I have gone back and created an infographic illustrating the 6 types of questions.
 
 The infographic is shown below (click on the infographic for the full size version).
 

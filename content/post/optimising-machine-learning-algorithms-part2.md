@@ -12,7 +12,7 @@ image = "/post/programming-942487_1280.jpg"
 
 This is the second in a series of blog posts sharing my experiences working with algorithms and data structures for machine learning.  These experiences were gained whilst building out the [nlp project](http://github.com/james-bowman/nlp) for [LSA (Latent Semantic Analysis)]({{< ref "semantic-analysis-of-webpages-with-machine-learning-in-go.md" >}}) of text documents.  
 
-In the [previous post]({{< ref "optimising-machine-learning-algorithms.md" >}}) in this series, I explored alternative approaches for representing and applying [TF-IDF]({{< ref "semantic-analysis-of-webpages-with-machine-learning-in-go.md#tf-idf-term-frequency-inverse-document-frequency" >}}) transforms for weighting term frequencies across document corpora.  We tested the approaches using Go's inbuilt benchmark functionality and found that our optimisations materially improved not just memory consumption but also performance (reducing memory consumption and processing time from 7 GB and 41 seconds to 250 KB and 0.8 seconds respectively).  In this blog post I shall explore other areas for optimisation, seeking to further reduce memory consumption and processing time.
+In the [Part 1 of this series]({{< ref "optimising-machine-learning-algorithms.md" >}}), I explored alternative approaches for representing and applying [TF-IDF]({{< ref "semantic-analysis-of-webpages-with-machine-learning-in-go.md#tf-idf-term-frequency-inverse-document-frequency" >}}) transforms for weighting term frequencies across document corpora.  We tested the approaches using Go's inbuilt benchmark functionality and found that our optimisations materially improved not just memory consumption but also performance (reducing memory consumption and processing time from 7 GB and 41 seconds to 250 KB and 0.8 seconds respectively).  In this blog post I shall explore other areas for optimisation, seeking to further reduce memory consumption and processing time.
 
 ## Matrix Sparsity
 
@@ -46,7 +46,7 @@ Also known as Triplet format, the COO format stores the row and column indices o
 
 #### CSR (Compressed Sparse Row) format
 
-Also known as CRS (Compressed Row Storage), this format is similar to COO above except that the row index slice is compressed.  Specifically, the row index slice stores the cumulative count of non-zero elements in each row such that `row[i]` contains the index into both `column[]` and `data[]` of the first non-zero element of row `i`.  Thus ranging across data from `data[row[i]]` to `data[row[i+1]-1]` will yield all values from row `i`.  For a more detailed explanation of CSR format please refer [here](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_.28CSR.2C_CRS_or_Yale_format.29).
+Also known as CRS (Compressed Row Storage), this format is similar to COO above except that the row index slice is compressed.  Specifically, the row index slice stores the cumulative count of non-zero elements in each row such that `row[i]` contains the index into both `column[]` and `data[]` of the first non-zero element of row `i`.  Thus ranging across data from `data[row[i]]` to `data[row[i+1]-1]` will yield all values from row `i`.  For a more detailed explanation of [CSR sparse matrix format please refer here](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_.28CSR.2C_CRS_or_Yale_format.29).
 
 Relative to COO, the compression reduces storage requirements, allows faster random access reads of elements and row slicing but means making changes to the sparsity pattern is very slow (changing a zero value to non-zero).  These characteristics make this format a poor choice for random access updates, passable for random access reads and good for arithmetic operations.
 
@@ -160,7 +160,7 @@ ok  	github.com/james-bowman/nlpbench	6.640s
 
 ### 2. TF/IDF Weighting
 
-In the [previous post]({{< ref "optimising-machine-learning-algorithms.md" >}}) in this series, we identified the TF-IDF weightings matrix to be a symmetric diagonal matrix and so switched to storing it as a simple slice containing just the diagonal values.  This resulted in material improvements to both storage requirements and processing time.  We will now switch back to using a matrix for the TF-IDF weightings but this time, rather than using a dense matrix format as before, we will use the appropriate DIAgonal sparse matrix format.
+In [part 1 of this series]({{< ref "optimising-machine-learning-algorithms.md" >}}), we identified the TF-IDF weightings matrix to be a symmetric diagonal matrix and so switched to storing it as a simple slice containing just the diagonal values.  This resulted in material improvements to both storage requirements and processing time.  We will now switch back to using a matrix for the TF-IDF weightings but this time, rather than using a dense matrix format as before, we will use the appropriate DIAgonal sparse matrix format.
 
 Step 2, takes the term document matrix constructed during step 1, extracts weighting values and stores them in a DIAgonal matrix which is then multiplied by the term document matrix.  The resulting matrix product will have the same sparsity pattern of non-zero values as the input term document matrix.  As the product will clearly therefore also be a sparse matrix and will be the result of an arithmetic operation we should consider the CSR (Compressed Sparse Row) sparse matrix format for this matrix.  We should also consider converting the input matrix to CSR prior to the arithmetic operation.
 
@@ -346,7 +346,7 @@ func BenchmarkSparseEndToEndVectAndTrans(b *testing.B) {
 }
 ```
 
-The results are shown below.  We can see that the current dense implementation of steps 1 & 2 (with the optimisations made in the [previous post in this series]({{< ref "optimising-machine-learning-algorithms.md" >}})) took 3.3 seconds to complete and consumes over 1 GB of memory.  In contrast, the new sparse format based implementation takes only 1.2 seconds to complete and consumes only 150 MB of memory.
+The results are shown below.  We can see that the current dense implementation of steps 1 & 2 (with the optimisations made in [the previous post in this series]({{< ref "optimising-machine-learning-algorithms.md" >}})) took 3.3 seconds to complete and consumes over 1 GB of memory.  In contrast, the new sparse format based implementation takes only 1.2 seconds to complete and consumes only 150 MB of memory.
 
 ```
 Jamess-MacBook-Pro:nlpbench jbowman$ go test -bench=EndToEndVect -benchmem
@@ -360,6 +360,6 @@ ok  	github.com/james-bowman/nlpbench	5.110s
 
 Using Sparse matrix formats in the place of Dense formats can significantly reduce both memory consumption and processing time.  Not necessarily because the algorithms are cleverer but simply because they are doing less work by processing only the non-zero elements.  Switching to sparse matrix formats, we saw a reduction in memory consumption and processing time from 1 GB to 150 MB and 3.3 seconds to 1.2 seconds respectively.
 
-The sparse matrix format implementations used in this article are [available on Github](http://github.com/james-bowman/sparse) along with all the [benchmarks and sample code](http://github.com/james-bowman/nlp-bench) used in this article.  The sparse matrix library is still quite basic in terms of features and available operations and I am hoping to extend it in due course with other operations (e.g. add, subtract, etc.) and further optimisations (e.g. parallel/fast matrix multiplication, BLAS integration, etc.).
+The [Golang sparse matrix format implementations used in this article are available on Github](http://github.com/james-bowman/sparse) along with all the [benchmarks and sample code](http://github.com/james-bowman/nlp-bench) used in this article.  The sparse matrix library is still quite basic in terms of features and available operations and I am hoping to extend it in due course with other operations (e.g. add, subtract, etc.) and further optimisations (e.g. parallel/fast matrix multiplication, BLAS integration, etc.).
 
 I would love to hear other people's experiences of using or developing dense or sparse matrix implementations and any challenges they encountered and how they overcame them.  Please share your experiences, thoughts and suggestions in the comments below.
