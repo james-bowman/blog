@@ -14,10 +14,10 @@ aliases = ["/about/"]
 </div>
 <div>
 <p>
-Hi, my name is James Bowman and I am currently the Chief Architect at <a href="http://www.markelinternational.com/">Markel International</a>.  
+Hi, my name is James Bowman and I am currently Enterprise Technical Programme Manager at <a href="http://www.argos.co.uk/">Argos</a>.  
 </p>
 <p>
-I love coding in Go, microservices, continuous delivery and DevOps. I am also fascinated by coaching, learning, people's behaviour and organisational change.
+I love coding in Go, microservices, continuous delivery and DevOps and have recently been learning lots about data science and machine learning. I am fascinated by coaching, learning, people's behaviour and organisational change.
 </p>
 <p>
 I work in London and live in Horsham, West Sussex in the UK with my wife, Rachel and two children.
