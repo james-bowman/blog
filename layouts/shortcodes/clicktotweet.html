@@ -5,8 +5,11 @@
 {{ $clickhandler := (printf "window.open('https://twitter.com/intent/tweet?text=%s', '_blank', 'width=500,height=350'); return false;" $urlquery) }}
 {{ $onclick := (printf "onclick=%q" $clickhandler) }}
 
+
+
 <blockquote>
 <a class="bloglogo" href="#" {{ $onclick | safeHTMLAttr }} style="text-decoration:none;">
 <p>{{ $quote }}</p>
-<span class="icon-twitter" style="color:#00aced;font-size:1em;"> Click to Tweet</span></a>
+<span style="color:#00aced;"><span class="icon-twitter" style="font-size:1.5em;"></span> Tweet this</span></a>
 </blockquote>
+
