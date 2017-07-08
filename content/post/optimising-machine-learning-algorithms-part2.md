@@ -4,7 +4,7 @@ date = "2017-06-09T16:45:40+01:00"
 description = "Comparing sparse matrix data structures and algorithms in Golang for machine learning and large data sets"
 draft = false
 tags = ["development", "machine learning", "go", "algorithms", "data structures"]
-title = "Optimising algorithms in Go for machine learning - Part 2"
+title = "Optimising algorithms in Go for machine learning - Part 2: Sparse matrix formats"
 
 image = "/post/programming-942487_1280.jpg"
 
