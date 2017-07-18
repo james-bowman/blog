@@ -138,7 +138,7 @@ func main() {
 	calcCosine(queryVector, lsi, testCorpus, "LSA")
 }
 
-func calcCosine(queryVector *mat64.Dense, tdmat *mat64.Dense, corpus []string, name string) {
+func calcCosine(query mat64.Matrix, tdmat mat64.Matrix, corpus []string, name string) {
 	// iterate over document feature vectors (columns) in the LSI and compare with the
 	// query vector for similarity.  Similarity is determined by the difference between
 	// the angles of the vectors known as the cosine similarity
@@ -147,7 +147,9 @@ func calcCosine(queryVector *mat64.Dense, tdmat *mat64.Dense, corpus []string, n
 	fmt.Printf("Comparing based on %s\n", name)
 
 	for i := 0; i < docs; i++ {
-		similarity := nlp.CosineSimilarity(queryVector.ColView(0), tdmat.ColView(i))
+		queryVec := query.(mat64.ColViewer).ColView(0)
+		docVec := tdmat.(mat64.ColViewer).ColView(i)
+		similarity := nlp.CosineSimilarity(queryVec, docVec)
 		fmt.Printf("Comparing '%s' = %f\n", corpus[i], similarity)
 	}
 }
