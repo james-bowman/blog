@@ -122,10 +122,12 @@ func main() {
 	// set k (the number of dimensions following truncation) to 2
 	reducer := nlp.NewTruncatedSVD(2)
 
-	// Fit and Transform the corpus into a term document matrix fitting the model to the documents in the process
+	// Fit and Transform the corpus into a term document matrix fitting the 
+	// model to the documents in the process
 	mat, _ := vectoriser.FitTransform(testCorpus...)
-	// transform the query into the same dimensional space - any terms in the query not in the original training data
-	// the model was fitted to will be ignored
+	// transform the query into the same dimensional space - any terms in 
+	// the query not in the original training data the model was fitted to 
+	// will be ignored
 	queryMat, _ := vectoriser.Transform(query)
 	calcCosine(queryMat, mat, testCorpus, "Raw TF")
 
@@ -139,9 +141,10 @@ func main() {
 }
 
 func calcCosine(query mat64.Matrix, tdmat mat64.Matrix, corpus []string, name string) {
-	// iterate over document feature vectors (columns) in the LSI and compare with the
-	// query vector for similarity.  Similarity is determined by the difference between
-	// the angles of the vectors known as the cosine similarity
+	// iterate over document feature vectors (columns) in the LSI and 
+	// compare with the query vector for similarity.  Similarity is determined 
+	// by the difference between the angles of the vectors known as the cosine 
+	// similarity
 	_, docs := tdmat.Dims()
 
 	fmt.Printf("Comparing based on %s\n", name)
