@@ -101,7 +101,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/gonum/matrix/mat64"
+	"gonum.org/v1/gonum/mat
 	"github.com/james-bowman/nlp"
 )
 
@@ -124,14 +124,14 @@ func main() {
 
 	// Fit and Transform the corpus into a term document matrix fitting the 
 	// model to the documents in the process
-	mat, _ := vectoriser.FitTransform(testCorpus...)
+	matrix, _ := vectoriser.FitTransform(testCorpus...)
 	// transform the query into the same dimensional space - any terms in 
 	// the query not in the original training data the model was fitted to 
 	// will be ignored
 	queryMat, _ := vectoriser.Transform(query)
-	calcCosine(queryMat, mat, testCorpus, "Raw TF")
+	calcCosine(queryMat, matrix, testCorpus, "Raw TF")
 
-	tfidfmat, _ := transformer.FitTransform(mat)
+	tfidfmat, _ := transformer.FitTransform(matrix)
 	tfidfquery, _ := transformer.Transform(queryMat)
 	calcCosine(tfidfquery, tfidfmat, testCorpus, "TF-IDF")
 
@@ -140,7 +140,7 @@ func main() {
 	calcCosine(queryVector, lsi, testCorpus, "LSA")
 }
 
-func calcCosine(query mat64.Matrix, tdmat mat64.Matrix, corpus []string, name string) {
+func calcCosine(query mat.Matrix, tdmat mat.Matrix, corpus []string, name string) {
 	// iterate over document feature vectors (columns) in the LSI and 
 	// compare with the query vector for similarity.  Similarity is determined 
 	// by the difference between the angles of the vectors known as the cosine 
@@ -150,8 +150,8 @@ func calcCosine(query mat64.Matrix, tdmat mat64.Matrix, corpus []string, name st
 	fmt.Printf("Comparing based on %s\n", name)
 
 	for i := 0; i < docs; i++ {
-		queryVec := query.(mat64.ColViewer).ColView(0)
-		docVec := tdmat.(mat64.ColViewer).ColView(i)
+		queryVec := query.(mat.ColViewer).ColView(0)
+		docVec := tdmat.(mat.ColViewer).ColView(i)
 		similarity := nlp.CosineSimilarity(queryVec, docVec)
 		fmt.Printf("Comparing '%s' = %f\n", corpus[i], similarity)
 	}
