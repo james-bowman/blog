@@ -101,7 +101,7 @@ package main
 import (
 	"fmt"
 
-	"gonum.org/v1/gonum/mat
+	"gonum.org/v1/gonum/mat"
 	"github.com/james-bowman/nlp"
 )
 
