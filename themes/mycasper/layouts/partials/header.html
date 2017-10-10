@@ -29,12 +29,14 @@
     <meta property="og:description" content="{{ .Site.Params.description }}" />
     {{ end }}
 
-    <title>{{ if ne .URL "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
+    {{ $paginator := ($.Scratch.Get "paginator") }}
+  
+    <title>{{ if ne .URL "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}{{ if (gt $paginator.PageNumber 1) }} (Page {{ $paginator.PageNumber }}){{ end }}</title>
 
     {{ if .IsPage }}
     <meta name="description" content="{{ .Description }}" />
     {{ else }}
-    <meta name="description" content="{{ .Site.Params.description }}" />
+    <meta name="description" content="{{ .Site.Params.description }}{{ if and .IsNode (gt $paginator.PageNumber 1) }} (Page {{ $paginator.PageNumber }}){{ end }}" />
     {{ end }}
 
     <meta name="HandheldFriendly" content="True" />

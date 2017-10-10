@@ -1,3 +1,17 @@
+{{ if not ($.Scratch.Get "paginatedSections") }}
+{{ if isset .Site.Params "paginatedSections" }}
+    {{ $.Scratch.Set "paginatedSections" .Site.Params.paginatedSections }}
+{{ else }}
+    {{ $.Scratch.Set "paginatedSections" "post" }}
+{{ end }}
+{{ end }}
+
+{{ $list := where .Data.Pages "Section" "in" ($.Scratch.Get "paginatedSections") }}
+{{ $list := where $list "Section" "!=" "" }}
+{{ $paginator := .Paginate ( $list ) }}
+
+{{ .Scratch.Set "paginator" $paginator }}
+
 {{ partial "header.html" . }}
 
 {{if .Site.Params.cover}}
@@ -85,17 +99,7 @@
         {{end}}
     {{ end }}
 
-    {{ if not ($.Scratch.Get "paginatedSections") }}
-        {{ if isset .Site.Params "paginatedSections" }}
-            {{ $.Scratch.Set "paginatedSections" .Site.Params.paginatedSections }}
-        {{ else }}
-            {{ $.Scratch.Set "paginatedSections" "post" }}
-        {{ end }}
-    {{ end }}
-
-    {{ $list := where .Data.Pages "Section" "in" ($.Scratch.Get "paginatedSections") }}
-    {{ $list := where $list "Section" "!=" "" }}
-    {{ $paginator := .Paginate ( $list ) }}
+    
 
     <div class="extra-pagination inner">
         {{ partial "pagination.html" $paginator }}
