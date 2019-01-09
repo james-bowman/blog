@@ -3,7 +3,7 @@ title = "Optimising Go code with Assembler"
 date = "2019-01-07T07:45:00+00:00"
 description = "Optimising Golang sparse vector dot product kernel with assembler for machine learning applications"
 draft = false
-tags = [ "go", "development", "algorithms", "machine learning' ]
+tags = ["go", "development", "algorithms", "machine learning"]
 categories = ["Development"]
 
 image = "/post/optimising-go-code-with-assembler.jpg"
