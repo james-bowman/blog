@@ -67,7 +67,7 @@ func Dot2(x []float64, indx []int, y []float64, incy int) (dot float64)
 
 Next, we write the assembly code implementation of the function in a separate file with the suffix `_amd64.s`.  It should be clear, this targets AMD64 compatible CPUs and if you wish to target an alternative CPU you would need to substitute the `amd64` substring in the suffix with the corresponding label for your CPU.  Here is an initial, basic assmbler implementation of the sparse dot product function:
 
-``` asm
+``` nasm
 #include "textflag.h"
 
 // func Dot2(x []float64, indx []int, y []float64) (dot float64)
@@ -137,7 +137,7 @@ The benchmark shows a modest improvement across the board.  This is most likely 
 
 The first optimisation we will apply is called [_loop inversion optimisation_](https://en.wikipedia.org/wiki/Loop_inversion).  In essence, this optimisation exchanges the `for` loop from our original implementation for a `do...while` style loop where the condition is evaluated at the end of the loop.  As we are now not evaluating the loop criteria until the end, we will also need to precede the loop with a conditional check to cover the case where the loop should run zero times.
 
-``` asm
+``` nasm
 #include "textflag.h"
 
 // func Dot3(x []float64, indx []int, y []float64) (dot float64)
@@ -197,7 +197,7 @@ As expected, we can see a modest improvement over the previous versions.  This o
 
 The next optimisation is called _loop reversal optimisation_.  Loop reversal, changes the order in which a loop iterates, typically decrementing the loop counter down towards zero rather than incrementing up from zero.  The primary advantage is that the change can change data dependencies and enable other optimisations.  This approach can also eliminate further loop overhead as many architectures support native _jump if zero_ style instructions removing the need for the explicit `CMPQ` instruction to compare with `0` at the end of the loop.
 
-``` asm
+``` nasm
 #include "textflag.h"
 
 // func Dot4b(x []float64, indx []int, y []float64) (dot float64)
@@ -262,7 +262,7 @@ In all cases, this version performs slightly worse than the previous version.  T
 
 To reduce the overhead from advancing pointers introduced in the previous optimisation, we will use [_Loop unrolling_](https://en.wikipedia.org/wiki/Loop_unrolling) to spread this overhead and decrease the number of times it is executed.  _Loop unrolling_ (or loop unwinding as it is sometimes referred to) is a technique to reduce loop overhead by decreasing the number of times loop conditions are evaluated, pointer arithmetic is executed and the number of jumps (which are expensive).  Simply put, the body of the loop is duplicated multiple times which in our case means processing multiple vector elements per iteration of the loop.  For our use case we will unroll the loop 4 times i.e. duplicate the body of the loop 4 times and process 4 vector elements per loop iteration.
 
-``` asm
+``` nasm
 #include "textflag.h"
 
 // func Dot5b(x []float64, indx []int, y []float64) (dot float64)
@@ -363,7 +363,7 @@ Whilst this appears to improve on our previous version in some cases, it is stil
 
 Using [Software pipelining](https://en.wikipedia.org/wiki/Software_pipelining) we can re-order the instructions to reduce the dependencies between adjacent instructions optimising for out-of-order execution.
 
-``` asm
+``` nasm
 #include "textflag.h"
 
 // func Dot6b(x []float64, indx []int, y []float64) (dot float64)
@@ -469,7 +469,7 @@ It should be clear from the benchmarks that this latest version is significantly
 
 The final optimisation we will apply is called [Vectorisation](https://en.wikipedia.org/wiki/Automatic_vectorization).  Vectorisation is a form of parallelisation where a scalar implementation (processing a single pair of operands at a time) is converted so that a single operation is applied to multiple pairs of operands simultanteously.  This can be achieved through the use of [SIMD](https://en.wikipedia.org/wiki/SIMD) (Single Instruction, Multiple Data) instructions which are supported on most modern commodity CPUs.  Intel's MMX, SSE and AVX extensions provide SIMD support.
 
-``` asm
+``` nasm
 #include "textflag.h"
 
 // func Dot7b(x []float64, indx []int, y []float64) (dot float64)
