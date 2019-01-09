@@ -10,7 +10,7 @@ image = "/post/optimising-go-code-with-assembler.jpg"
 
 +++
 
-In this blog post I will explore the steps to optimise a sparse vector dot product operation.  We will start with a basic implementation in Go, convert it to assembler and then iteratively optimise it, measuring the effect of each change to check our progress.
+In this blog post I will explore the steps to optimise a sparse vector dot product operation.  We will start with a basic implementation in Go, convert it to assembler and then iteratively optimise it, measuring the effect of each change to check our progress.  All the code from the post is available on [Github](https://github.com/james-bowman/algos) and also forms part of the [Golang Sparse matrix package](https://github.com/james-bowman/sparse).
 
 A [vector dot product](https://en.wikipedia.org/wiki/Dot_product) is a very common kernel, or basic building block, for many computations used within scientific computing and machine learning e.g. matrix multiplication, cosine similarity, etc.  The dot product simply multiplies together the respective elements of two vectors and then adds all the results together to give a scalar output.
 
