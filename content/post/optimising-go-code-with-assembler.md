@@ -200,8 +200,8 @@ The next optimisation is called _loop reversal optimisation_.  Loop reversal, ch
 ``` nasm
 #include "textflag.h"
 
-// func Dot4b(x []float64, indx []int, y []float64) (dot float64)
-TEXT ·Dot4b(SB), NOSPLIT, $0
+// func Dot4(x []float64, indx []int, y []float64) (dot float64)
+TEXT ·Dot4(SB), NOSPLIT, $0
   MOVQ    x+0(FP), R8
   MOVQ    indx+24(FP), SI
   MOVQ    y+48(FP), DX
@@ -265,8 +265,8 @@ To reduce the overhead from advancing pointers introduced in the previous optimi
 ``` nasm
 #include "textflag.h"
 
-// func Dot5b(x []float64, indx []int, y []float64) (dot float64)
-TEXT ·Dot5b(SB), NOSPLIT, $0
+// func Dot5(x []float64, indx []int, y []float64) (dot float64)
+TEXT ·Dot5(SB), NOSPLIT, $0
   MOVQ    x+0(FP), R8
   MOVQ    indx+24(FP), SI
   MOVQ    y+48(FP), DX
@@ -366,8 +366,8 @@ Using [Software pipelining](https://en.wikipedia.org/wiki/Software_pipelining) w
 ``` nasm
 #include "textflag.h"
 
-// func Dot6b(x []float64, indx []int, y []float64) (dot float64)
-TEXT ·Dot6b(SB), NOSPLIT, $0
+// func Dot6(x []float64, indx []int, y []float64) (dot float64)
+TEXT ·Dot6(SB), NOSPLIT, $0
   MOVQ    x+0(FP), R8
   MOVQ    indx+24(FP), SI
   MOVQ    y+48(FP), DX
@@ -472,8 +472,8 @@ The final optimisation we will apply is called [Vectorisation](https://en.wikipe
 ``` nasm
 #include "textflag.h"
 
-// func Dot7b(x []float64, indx []int, y []float64) (dot float64)
-TEXT ·Dot7b(SB), NOSPLIT, $0
+// func Dot7(x []float64, indx []int, y []float64) (dot float64)
+TEXT ·Dot7(SB), NOSPLIT, $0
   MOVQ    x+0(FP), R8
   MOVQ    indx+24(FP), SI
   MOVQ    y+48(FP), DX
