@@ -65,7 +65,7 @@ A full overview of [programming assembler with Go](https://golang.org/doc/asm) i
 func Dot2(x []float64, indx []int, y []float64, incy int) (dot float64)
 ```
 
-Next, we write the assembly code implementation of the function in a separate file with the suffix `_amd64.s`.  It should be clear, this targets AMD64 compatible CPUs and if you wish to target an alternative CPU you would need to substitute the `amd64` substring in the suffix with the corresponding label for your CPU.  Here is an initial, basic assmbler implementation of the sparse dot product function:
+Next, we write the assembly code implementation of the function in a separate file with the suffix `_amd64.s`.  It should be clear, this targets AMD64 compatible CPUs and if you wish to target an alternative CPU you would need to replace the `amd64` substring in the suffix with the corresponding label for your CPU.  Here is an initial, basic assmbler implementation of the sparse dot product function:
 
 ``` nasm
 #include "textflag.h"
