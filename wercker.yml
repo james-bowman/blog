@@ -9,9 +9,8 @@ deploy:
   steps:
     - install-packages:
         packages: git ssh-client
-    - lukevivier/gh-pages@0.2.1:
+    - pahnev/gh-pages@0.3.1:
         token: $GIT_TOKEN
+        repo: james-bowman/james-bowman.github.io
         domain: www.jamesbowman.me
         basedir: public
-        repo: james-bowman/james-bowman.github.io
-        
