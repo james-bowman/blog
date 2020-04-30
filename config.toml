@@ -39,7 +39,7 @@ PygmentsStyle = "vs"
   #google_analytics = "UA-64894312-1"
   facebook_like = true
   twitter_tweet_button = true
-  google_plus_one = "true"
+  google_plus_one = "false"
   disqus_short_name = "jamesebowman"
   disqus_show_comment_count = "true"
   RSSLink = "http://feeds.jamesbowman.me/jamesbowman/blog"
@@ -64,6 +64,12 @@ PygmentsStyle = "vs"
   weight = -110
   identifier = "archive"
   url = "/post"
+
+[[menu.main]]
+  name = "Talks"
+  weight = -105
+  identifier = "talks"
+  url = "/talks"
 
 [[menu.main]]
   name = "About me"
