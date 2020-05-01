@@ -2,7 +2,7 @@ baseurl = "http://www.jamesbowman.me/"
 languageCode = "en-gb"
 title = "James Bowman"
 paginate = 5
-copyright = "All rights reserved 2017"
+copyright = "Creative Commons Attribution 4.0 International License (CC BY)"
 disqusShortname = "jamesebowman"
 
 PygmentsCodeFences = true
@@ -60,16 +60,10 @@ PygmentsStyle = "vs"
   url = "/"
 
 [[menu.main]]
-  name = "Archive"
-  weight = -110
-  identifier = "archive"
-  url = "/post"
-
-[[menu.main]]
   name = "Talks"
-  weight = -105
+  weight = -110
   identifier = "talks"
-  url = "/talks"
+  url = "/talk"
 
 [[menu.main]]
   name = "About me"
